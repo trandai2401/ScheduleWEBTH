@@ -1,0 +1,616 @@
+*{
+    font-family: 'Varela Round', sans-serif;
+    margin: O auto;
+    
+}
+
+body{
+    /* background: #EBF2F5; */
+}
+
+#header-topnav{
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+#sidenavAccordion{
+    
+    background-image: linear-gradient(to right, #74ebd5 0%, #9face6 100%);
+    
+    
+}
+
+#layoutSidenav_nav #sidenavAccordion {
+    width: 250px;
+}
+
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    color: #000000;
+    -webkit-font-smoothing: antialiased;
+}
+
+input,
+button,
+textarea {
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+}
+
+
+/* Basis */
+
+.btn {
+    font-family: 'Open Sans';
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: #fff;
+    color: #262626;
+    border-radius: 10px;
+    height: 50px;
+    font-weight: 600;
+    min-width: 100px;
+    padding: 0px 20px;
+    transition: 0.2s ease;
+    cursor: pointer;
+    outline: 0;
+}
+
+.btn:hover {
+    color: #FFF;
+    background: #455AF7;
+}
+
+.btn-small {
+    min-width: 50px;
+}
+
+
+.btn-day {
+    font-family: 'Open Sans';
+    font-size: 9px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+    background: rgba(0, 0, 0, 0);
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    z-index: 99;
+    outline: 0;
+    border-radius: 10px;
+    transition: 0.4s all;
+}
+
+.btn-day.active {
+    color: #FFF;
+    font-weight: 600;
+    z-index: 999;
+}
+
+.btn-day.active::before {
+    position: absolute;
+
+    content: '';
+    width: 20px;
+    height:20px;
+    background: #96a3ff;
+    border-radius: 10px;
+    z-index: -100;
+}
+
+.text-field {
+    font-size: 13px;
+    padding: 10px;
+    height: 30px;
+    width: 150px;
+    border: 1px solid #f0f0f0;
+    border-radius: 10px;
+    margin: 0px 10px 0 0;
+}
+
+.title {
+    font-size: 1.3em;
+}
+
+.subtitle {
+    font-size: 1.1em;
+}
+
+/* Calendar */
+
+#sidenavAccordion .container {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 100%;
+    min-height: 300px;
+    background: transparent;
+}
+
+#sidenavAccordion .container .calendar-assets {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    height: 60px;
+    /* padding: 10px; */
+}
+
+#sidenavAccordion .container #sidenavAccordion .container#currentDate{
+  text-align:center;
+  font-size:14px;
+}
+
+#sidenavAccordion .container .field {
+    display: flex;
+    width: auto;
+    flex-direction: column;
+    align-items: left;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.field label {
+    margin: 2px;
+}
+
+.form-input {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.day-assets {
+    display: flex;
+    justify-content: space-between;
+    width: 324px;
+    height: 40px;
+}
+
+.day-assets .btn:nth-child(1), .btn:nth-child(3){
+    width: 30px;
+}
+
+
+
+.day-assets .btn:nth-child(2) i {
+    padding: 0 10px 0 0 !important;
+}
+
+.calendar {
+    height: 260px;
+    width: 210px;
+    border-radius: 18px;
+    background: #ffffff;
+    padding: 10px;
+    user-select: none;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-radius: 18px 18px 0px 0px;
+    padding: 15px;
+    height: 50px;
+    width: 100%;
+    color: #262626;
+}
+
+.month {
+    font-size: 0.7em;
+}
+
+.icon {
+    padding: 10px;
+    font-size: 1em;
+    margin: 0 0 0 5px;
+    background: #ffffff;
+    color: #455af7;
+    border: none;
+    cursor: pointer;
+    outline: 0;
+}
+
+.icon:hover {
+    cursor: pointer;
+}
+
+#calendar {
+    width: 100%;
+
+}
+
+.weekends th {
+    font-size: 5px;
+    color: rgb(116, 116, 116);
+    font-weight: 400;
+    width: 40px;
+    margin: 10px 0;
+}
+
+#calendar tr {
+    color: black;
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin: 0px;
+}
+
+#calendar td {
+    display: flex;
+    height: 30px;
+    width: 40px;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    z-index: 99;
+}
+
+/* mycalendar */
+.mycalendar{
+    width: 100%;
+    /* height: 30px; */
+    /* background: black; */
+}
+
+#btn-create-mycalendar{
+    font-size: 12px;
+    background-color: #568585;
+    margin: 10px 10%;
+    color: #ffffff;
+    padding: 0 auto;
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+}
+
+#dialod-create-mycalendar .modal-body .input-group input, 
+#dialod-create-mycalendar .modal-body .input-group button{
+    font-size: 14px;
+    height: 40px;
+}
+#dialod-create-mycalendar .modal-body .todolist-mycalendar ul{
+ 
+}
+
+#dialod-create-mycalendar .modal-body .todolist-mycalendar li{
+    position: relative;
+    left: -20px;
+    list-style-type: none;
+    font-size: 14px;
+    padding: 5px 15px;
+    margin: 10px 15px;
+    border: 0.3px solid #b9b9b9;
+    border-radius: 5px;
+}
+
+#dialod-create-mycalendar .modal-body .todolist-mycalendar li:hover{
+    background-color: #D9AFD9;
+    color: #ef2243;
+}
+
+/* style for li */
+.muLI-todolist{
+    display: flex;
+    justify-content: space-between;
+}
+
+.muLI-todolist .btn-delete-todolist{
+    border: none;
+    margin: 0px 10px;
+}
+
+.muLI-todolist .input-color-todolist{
+    width: 25px;
+    height: 25px;
+    border: none;
+    padding: 0 0;
+}
+
+/* style for todo list bên trái */
+#ul-leftTodoList{
+    position: relative;
+    left:-20px ;
+}
+#ul-leftTodoList li{
+    font-size: 12px;
+    color: #262626;
+    list-style-type: none;
+    border: 0.5px solid rgb(107, 104, 104);
+    margin: 10px;
+    padding: 5px 10px;
+    border-radius: 5px;
+}
+
+
+#layoutSidenav_nav{
+ width: 250px;
+}
+
+/* table */
+#layoutSidenav_content table{
+    /* position:absolute; */
+}
+#layoutSidenav_content table #tbody{
+ 
+}
+
+/* Dialog - Form chính thêm sự kiện */
+#form-addEvent-mycalendar{
+    position: fixed;
+    
+    /* margin: 0 10%; */
+    top: 70px;
+    width: 50%;
+    height: 500px;
+    background-color: #fefeff;
+    border: 0.5px solid #cecece;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.header-form-input-add-event {
+    display: flex;
+}
+
+.header-form-input-add-event button:hover{
+    background: none;
+}
+
+.form-control.input-add-envent {
+    width: 100%;
+    border: none;
+    font-size: 24px;
+    font-weight:100;
+}
+
+ .empty-input{
+    width: 100%;
+    height: 1.3px;
+    background-color: rgb(124, 124, 124);
+    margin-left: 10px;
+
+}
+
+.btn-save-event{
+    color: white;
+}
+
+.form-addEvent-mycalendar.d-flex.justify-content-center 
+#form-addEvent-mycalendar{
+    display: none;
+}
+
+#thuhoanhap{
+    display: none;
+}
+
+/* date time */
+.input-datetime{
+    display: flex;
+    justify-content: center;
+    margin: 0 5%;
+}
+
+#input_time{
+    padding: 5px 0;
+  font-size: 1.5em;
+  font-family: inherit;
+  width: 100px;
+}
+
+[type="date"] {
+    background:#aae0ff url(../img/svg/calendar.png)  95% 50% no-repeat ;
+  }
+  [type="date"]::-webkit-inner-spin-button {
+    display: none;
+  }
+  [type="date"]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+  }
+
+
+
+  #date-start{
+    border: 1px solid rgb(179, 179, 179);
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 0px;
+    box-shadow: rgba(150, 145, 145, 0.2) 0px 2px 8px 0px;
+    width: 25%;
+    height: 40px;
+}
+
+#date-the-end{
+    border: 1px solid rgb(179, 179, 179);
+    border-radius: 5px;
+    background-color: #ffffff;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-right: 0px;
+    box-shadow: rgba(150, 145, 145, 0.2) 0px 2px 8px 0px;
+    width: 25%;
+    height: 40px;
+}
+
+
+
+#time-start{
+    border: 1px solid rgb(179, 179, 179);
+    border-radius: 5px;
+    background-color: #ffffff;
+    box-shadow: rgba(150, 145, 145, 0.2) 0px 2px 8px 0px;
+    width: 14%;
+    height: 40px;
+    margin: 0 10px;
+}
+
+
+#selected-time-start{
+    background: transparent url(../img/svg/clock.png)  95% 50% no-repeat ;
+
+}
+
+#selected-time-end{
+    background: transparent url(../img/svg/clock.png)  95% 50% no-repeat ;
+
+}
+
+/* Combobox chọn việc cần làm */
+.select-option-calendar-color{
+    margin: 10px 8%;
+}
+
+#selected-my-calendar{
+    width: 100%;
+    background:#ffffff url(../img/svg/radix-icons_dropdown-menu.png)  95% 50% no-repeat ;
+
+}
+
+input[type="color"] {
+    -webkit-appearance: none;
+     width: 30px;
+     height: 30px;
+     border: 0;
+     border-radius: 50%;
+     padding: 0;
+     overflow: hidden;
+     box-shadow: 2px 2px 5px rgba(0,0,0,.1);
+ }
+ input[type="color"]::-webkit-color-swatch-wrapper {
+     padding: 0;
+ }
+ input[type="color"]::-webkit-color-swatch {
+     border: none;
+ }
+
+#input-color-addEvent{
+    /* margin-top: 30px; */
+}
+
+/* Ck editor */
+.description-ckeditor{
+    margin: 10px 8%;
+}
+
+.ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred{
+    height: 130px;
+}
+
+.description-ckeditor{
+    height: 130px;
+    
+}
+
+/* Dialog - Xem chi tiết lịch đã chọn */
+#showEventCalendar {
+    position: fixed;
+    
+    /* margin: 0 10%; */
+    top: 110px;
+
+    background-color: #fefeff;
+    border: 0.5px solid #cecece;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+     width: 35%;
+     height: 450px;
+     background-color: #ffffff; 
+     display: none;
+       
+}
+
+.title_showEventCalendar{
+    color: rgb(153, 153, 153);
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.bodyEvent{
+    margin: 0 5%;
+}
+
+#btn_delete_event{
+    background: #568585;
+    color: blanchedalmond;
+    font-size: 13px;
+}
+  
+.empty_line{
+    height: 0.5px; background-color: rgb(153, 152, 152); width: 100%; margin: 10px auto;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* style nút close cho li */
+/* Style the close button */
+.btn-close-li {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .btn-close-li:hover {
+    background-color: #ef2243;
+    color: white;
+  }
+
+/* Style the color picker for button */
+.btn-color-picker-li {
+    margin: 0 10px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    
+    background-color: #d6e04b;
+    color: #ef2243;
+  }
+

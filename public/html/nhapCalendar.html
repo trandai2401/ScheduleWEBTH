@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="giamNgay();" id="ngayT">Ngày trước</button>
+    <button onclick="tangNgay();" id="ngayS">Ngày sau</button>
+    <br>
+    <label for="" id="mon">Thứ 2 Ngày:</label><label for="" id="ngayT2"> </label>
+    <br>
+    <label for="" id="tus">Thứ 3 Ngày:</label><label for="" id="ngayT3"> </label>
+    <br>
+    <label for="" id="wed">Thứ 4 Ngày:</label><label for="" id="ngayT4"> </label>
+    <br>
+    <label for="" id="thu">Thứ 5 Ngày:</label><label for="" id="ngayT5"> </label>
+    <br>
+    <label for="" id="fri">Thứ 6 Ngày:</label><label for="" id="ngayT6"> </label>
+    <br>
+    <label for="" id="sta">Thứ 7 Ngày:</label><label for="" id="ngayT7"> </label>
+    <br>
+    <label for="" id="sun">Chủ nhật Ngày:</label><label for="" id="chunhat"> </label>
+    <script>
+        var date = new Date(2021, 11, 1);
+        console.log(date);
+        console.log(""+date.getDate() + date.getMonth() + date.getFullYear());
+        console.log("Hom nay la thu : " + date.getDay());
+        console.log("Hom nay cach thu 2 : "  + (date.getDay() -1)  );
+        date = new Date(date.getFullYear(), date.getMonth(), date.getDate() - (date.getDay() -1));
+        console.log("Thứ 2 là ngày: " + date.getDate());
+        var ngaythu2 = document.getElementById("ngayT2");
+        ngaythu2.innerText = date.getDate();
+
+        date = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
+        console.log("Thứ 3 là ngày: " + date.getDate());
+        var ngaythu3 = document.getElementById("ngayT3");
+        ngaythu3.innerText = date.getDate();
+
+        date = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
+        console.log("Thứ 4 là ngày: " + date.getDate());
+        var ngaythu4 = document.getElementById("ngayT4");
+        ngaythu4.innerText = date.getDate();
+
+        date = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
+        console.log("Thứ 5 là ngày: " + date.getDate());
+        var ngaythu4 = document.getElementById("ngayT5");
+        ngaythu4.innerText = date.getDate();
+
+        date = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
+        console.log("Thứ 6 là ngày: " + date.getDate());
+        var ngaythu6 = document.getElementById("ngayT6");
+        ngaythu6.innerText = date.getDate();
+
+        date = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
+        console.log("Thứ 7 là ngày: " + date.getDate());
+        var ngaythu7 = document.getElementById("ngayT7");
+        ngaythu7.innerText = date.getDate();
+
+        date = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
+        console.log("Chủ nhật là ngày: " + date.getDate());
+
+        
+
+
+        // function tangNgay(){
+        //     date = new Date(date.getFullYear(),date.getMonth(), date.getDate() + 1);
+        //     console.log(date);
+
+        // }
+        // function giamNgay(){
+        //     date = new Date(date.getFullYear(),date.getMonth(), date.getDate() - 1);
+        //     console.log(date);
+
+        // }
+        // 17122021
+    </script>
+
+</body>
+</html>
