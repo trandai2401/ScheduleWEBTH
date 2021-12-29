@@ -198,7 +198,7 @@
                 <div id="avt" class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                     <div class="main-body-content rounded-circle">
                         <div class="img-avatar-user">
-                            <img id="img_avatar_main"  src="{{asset('image/avata1.jpg')}}" alt="">
+                            <img id="img_avatar_main"  src="" alt="">
                         </div>
                     </div>
                 </div>
@@ -207,16 +207,16 @@
                 <div class="col-8 col-sm-8 col-md-8 col-lg-8 col-xl-8">  
                     <div>
                         <!--  name-->
-                        <label class="title-info name-user">Tang Thu Hoa</label>
+                        <label id="ten_NguoiDung" class="title-info name-user">Tang Thu Hoa</label>
                         <!-- Button edit -->
                         <button type="button" id="btn-edit-profile" class="btn btn-light" data-toggle="modal" data-target="#exampleModalCenter">Chỉnh sửa thông tin cá nhân</button>
                     </div>
                     
                     <!-- gmail, target, -->
-                    <a href="" class="title-info name-gmail">thuhoatang2001@gmail.com</a>
+                    <a href="" id="gmail_NguoiDung" class="title-info name-gmail">thuhoatang2001@gmail.com</a>
                     <div id="target">
                         <label class="" for=""><span class="iconify d-sm-none d-none d-md-block d-lg-block" data-icon="twemoji:sunflower" style="font-size: 30px; position: relative; top: -0   px; margin-right: 10px;"></span></label> 
-                        <label id="" class="title-info target">    
+                        <label id="target_NguoiDung" class="title-info target">    
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit
                             dolor sit assumenda quae aliquam quis exercitationem.
                         </label>
@@ -350,7 +350,40 @@
       }
     })
 
-    // dị quá
+    // ko có dị
+
+    function callApiGetThongTin() {
+            var form = new FormData();
+            
+            $.ajax({
+                method: 'get',
+                // url: "{{ route('schedule') }}",
+                url: "http://localhost/ScheduleWEBTH/public/user/getprofile",
+                context: document.body,
+                data: form,
+                contentType: false,
+                processData: false
+                
+            }).done(function(result) {
+                var ten = document.getElementById("ten_NguoiDung");
+                ten.innerText = result.name;
+
+                var gmail = document.getElementById("gmail_NguoiDung");
+                gmail.innerText = result.email;
+
+                var target = document.getElementById("target_NguoiDung");
+                target.innerText = result.taget;
+
+                var avata = document.getElementById("img_avatar_main");
+                avata.src = result.linkanhavata;
+                console.log(result);
+
+                
+            }).fail(function(result) {
+                console.log(result);
+            })
+        }
+    callApiGetThongTin();
 
   </script>
 
