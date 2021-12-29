@@ -4,6 +4,7 @@ use App\Http\Controllers\CongViecController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SignUpController;
 use App\Models\CongViec;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
@@ -57,4 +58,15 @@ Route::prefix('user')->group(function () {
     Route::get('getprofile', function () {
         return Auth::user();
     })->name('getprofile');
+
+    
+    Route::post('postprofile', function (Request $request) {
+        $user = User::find(Auth::user()->id);
+        $user->name = $request->name;
+        $user->email = $request->email;
+        $user->taget = $request->taget;
+
+        $user->save();
+        return $user;
+    })->name('postprofile');
 });

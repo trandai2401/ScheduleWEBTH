@@ -18,3 +18,32 @@ OUTPUT:
 }
 
 Yêu cầu : Đã đăng nhập tài khoản
+
+====================================================================================
+
+
+Đường dẫn : http://localhost/ScheduleWEBTH/public/user/setprofile
+name : setprofile
+
+INPUT :
+{
+	_token : "234589dfsg9sd024bl",
+	name: "DDaij",
+	email: "trandai2401@gmail",
+	taget: null
+}
+
+OUTPUT:
+{
+	id: 4,
+	name: "DDaij",
+	email: "trandai2401@gmail",
+	email_verified_at: null,
+	taget: null,
+	linkanhavata: null,
+	sodienthoai: null,
+	created_at: "2021-12-24T15:11:39.000000Z",
+	updated_at: "2021-12-24T15:11:39.000000Z"
+}
+
+Yêu cầu : Đã đăng nhập tài khoản
