@@ -408,7 +408,7 @@
 
                     <!-- Combobox chọn công việc đã lưu -->
                     <div class="select-option-calendar-color">
-                        <div class="row">
+                        <div class="row" style="height: 65px;">
                             <div class="col-6">
                                 <label for="" style="font-size: 13px; font-weight: 600">Chọn việc cần làm</label>
 
@@ -558,6 +558,18 @@
                         </div>
                     </div>
 
+                    <!-- Dialog - Thong bao -->
+                    <div class="d-flex justify-content-center">
+                        <div id="thongbao" style="display: block;">                   
+                        <div class="card text-dark text-center mb-3">
+                            <div class="card-header title-thongbao py-2" style="background-color: #75e9d5;">Thông báo</div>
+                            <div class="card-body" style="background-color: rgb(255,214,214, 0.4) !important;">
+                            <img src="img/svg/ok_bell.png" alt="">
+                            <p id="thongbao_content" class="card-text mt-4">Bạn vừa thêm một sự kiện mới vào lịch của mình!</p>
+                            </div>
+                        </div>
+                        </div>
+                    </div>
 
                 </div>
             </div>
@@ -773,15 +785,12 @@
             var thuTrongTuanTheolichBanThan = date_tam02.getDay() + 1;
             var ChonGio = document.getElementById("selected-time-start");
 
-
-
-
-
             callApiAddCongViec(tieuDe.value, editor.getData(), inputNgay.value, gioBatDau.value, gioKetThuc.value,
                 selectDanhMuc
                 .value, selectDanhMuc.options[selectDanhMuc.selectedIndex].className);
             tieuDe.value = "";
             editor.setData("");
+            
         }
 
         function closeFromChiTiet() {
@@ -816,14 +825,45 @@
                 console.log(gioketThuc - gioBatDau);
                 createCardCongViec(result.id, result.tieude, d.getDay() + 1, gioBatDau, gioketThuc - gioBatDau,
                     color);
+                    thongBaoDialog();
                 // var res = JSON.parse(result);
                 // thongBao("alert-success", "Đã thêm " + res.soLuongThayDoi + " nông sản này vào giỏ hàng");
             }).fail(function(result) {
                 console.log(result);
             })
 
+            
+
         }
 
+
+
+        // thông báo - THU HOA NE ny nghiêm quá, em sợ
+        
+        function thongBaoDialog(){
+            
+                    setTimeout(function () {
+                        var div = $("#thongbao");
+                        div[0].style.display = "block";
+                    }, 0);
+                    div.animate({ top: '100px' }, 100);
+                    setTimeout(function () {
+                        var div = $("#thongbao");
+                        div.animate({ top: '0px' }, 100);
+                    }, 1900);
+
+
+                    setTimeout(function () {
+                        var div3 = $("#thongbao");
+                        div[0].style.display = "none";
+                    }, 2000);
+                    console.log("dhqwdhi");
+
+        }
+                
+                    
+                
+           
         // function createCardCongViec(id, tieuDe, thu, gio, thoiGianKeoDai, mauSac) {
         //     var div = document.createElement("div");
 
@@ -880,6 +920,7 @@
                 console.log(result);
             })
 
+
         }
 
         function callApiDeleteCongViec(id) {
@@ -914,8 +955,13 @@
         }
 
         function callApiGetDanhMuc() {}
+
+    
     </script>
 
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        
     <script src="https://kit.fontawesome.com/812e771e48.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/calendar.js"></script>
     <script type="text/javascript" src="js/todolist-mycalendar.js"></script>
