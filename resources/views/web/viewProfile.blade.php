@@ -198,7 +198,7 @@
                 <div id="avt" class="col-4 col-sm-4 col-md-4 col-lg-4 col-xl-4">
                     <div class="main-body-content rounded-circle">
                         <div class="img-avatar-user">
-                            <img id="img_avatar_main" src="" alt="">
+                            <img id="img_avatar_main"  src="{{asset('image/avata1.jpg')}}" alt="">
                         </div>
                     </div>
                 </div>

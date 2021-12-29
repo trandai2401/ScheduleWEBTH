@@ -50,7 +50,11 @@ Route::prefix('user')->group(function () {
         Route::post('', [CongViecController::class, 'postCongViec'])->name('schedule');
     });
 
-    Route::get('profile', function(){
+    Route::get('profile', function () {
         return view("web.ViewProfile");
+    })->name('profile');
+
+    Route::get('getprofile', function () {
+        return Auth::user();
     });
 });

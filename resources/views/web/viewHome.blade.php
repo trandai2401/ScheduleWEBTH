@@ -229,7 +229,7 @@
                 </a>
                 <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
                     <li><a class="dropdown-item" href="#!">{{ $user->name }}</a></li>
-                    <li><a class="dropdown-item" href="#!">Cá nhân</a></li>
+                    <li><a class="dropdown-item" href="{{ route('profile') }}">Cá nhân</a></li>
                     <li><a class="dropdown-item" href="#!">Lịch của tôi</a></li>
                     <li>
                         <hr class="dropdown-divider" />
