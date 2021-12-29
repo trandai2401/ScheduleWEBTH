@@ -56,5 +56,5 @@ Route::prefix('user')->group(function () {
 
     Route::get('getprofile', function () {
         return Auth::user();
-    });
+    })->name('getprofile');
 });
