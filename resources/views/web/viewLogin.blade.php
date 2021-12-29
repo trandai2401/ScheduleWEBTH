@@ -430,7 +430,7 @@
                     errors.innerHTML = "Sai mật khẩu hoặc email";
 
                 } else if (result == 1) {
-                    window.location.href = "{{ route('schedule') }}";
+                    window.location.href = "{{ route('ViewSchedule') }}";
                 }
 
                 // var res = JSON.parse(result);

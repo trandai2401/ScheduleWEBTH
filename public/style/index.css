@@ -406,6 +406,10 @@ textarea {
     display: none;
 }
 
+#btn_save_formAddEvent{
+    background-color: #477490;
+}
+
 /* date time */
 .input-datetime{
     display: flex;
@@ -509,15 +513,18 @@ input[type="color"] {
 
 #input-color-addEvent{
     /* margin-top: 30px; */
+    position: relative;
+    top: -7px;
 }
 
 /* Ck editor */
 .description-ckeditor{
-    margin: 10px 8%;
+    margin: 5px 8%;
+    position: relative;
 }
 
 .ck.ck-content.ck-editor__editable.ck-rounded-corners.ck-editor__editable_inline.ck-blurred{
-    height: 130px;
+    height: 90px;
 }
 
 .description-ckeditor{
@@ -563,12 +570,90 @@ input[type="color"] {
     height: 0.5px; background-color: rgb(153, 152, 152); width: 100%; margin: 10px auto;
 }
 
+#thongbao{
+    box-shadow: rgb(38, 57, 77) 0px 20px 30px -10px;
+    margin: 0 auto;
+    height: 150px;
+    width: 300px;
+    position: absolute;
+    display: none;
+    position: fixed;
+}
+
+.title-thongbao{
+    font-weight: bolder;
+}
+
+#thongbao img{
+    height: 80px;
+    width: 80px;
+    object-fit: contain;
+    
+}
+
+/* css checkbox */
+.checkbox{
+    position: relative;
+    top: -8px;
+    }
+
+#form-addEvent-mycalendar .checkbox input[type=checkbox]{
+    display: none;
+}
+
+.checkbox i{
+    height: 25px;
+    width: 25px;
+    display: inline-block;
+    border: 3px solid #477490;
+    border-radius: 2px;
+   position: relative;
+}
+
+.checkbox:hover i{
+    border-color: #477490;
+}
+
+.checkbox input[type="checkbox"]:checked + i::after{
+    content: "";
+    position: absolute;
+    height: 15px;
+    width: 15px;
+    background: #477490;
+   top: 2.2px;
+   left: 2px;
+   border-radius: 2px 2px;
+}
+
+.checkbox i:checked i {
+    background-color: #477490;
+    margin: 2px 2px;
+}
+
+#checkbox_laplai{
+    position: relative;
+    /* top: 3px; */
+}
+
+/* Thống kê */
+#btn_thongke{
+    border: 0.5px solid #568585;
+    font-size: 12px;
+    background-color: #568585;
+    margin: 10px 10%;
+    color: #ffffff;
+    padding: 0 auto;
+    width: 80%;
+    height: 40px;
+    border-radius: 5px;
+}
 
 
 
 
-
-
+@media screen and (wi) {
+    
+}
 
 
 

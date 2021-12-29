@@ -428,13 +428,31 @@
                                 <label for="" style="font-size: 13px; font-weight: 600">Màu sắc</label>
                                 <br />
                                 <input id="input-color-addEvent" type="color" value="{{ $danhMucs[0]->color }}" />
+
+
+                                <label class="checkbox mx-3">
+                                    <input class="mr-2 mt-2" type="checkbox" id="checkbox_laplai" name="horns">
+                                    <i class="mr-3 icon-checkbox mt-3"></i>
+                                    <label for="" style="position:relative; top:-7px;">Lặp lại hằng tuần</label>
+
+                                </label>
                             </div>
                         </div>
                     </div>
+                    <!-- input thêm bạn bè trong sự kiện -->
+                    <div class="select-option-calendar-color">
+                        <div class="row" style="height: 70px;">
+                            <div class="col-6">
+                                <label for="" style="font-size: 13px; font-weight: 600">Thêm bạn bè của bạn</label>
 
+                                <input type="text" class="form-control">
+                            </div>
+                            <div class="col-6"> </div>
+                        </div>
+                    </div>
                     <!-- CK Editor - mô tả -->
-                    <label for="" style="font-size: 13px; font-weight: 600; margin: 5px 8%">Mô tả sự kiện
-                    </label>
+                    {{-- <label for="" style="font-size: 13px; font-weight: 600; margin: 5px 8%">Mô tả sự kiện
+                    </label> --}}
 
                     <div class="description-ckeditor">
                         <textarea name="" id="editor" cols="30" rows="10" placeholder="Nội dung mô tả"></textarea>
@@ -477,7 +495,8 @@
                                                     style="font-size: 25px; color: #ee183b"></span>
                                             </button>
                                             <input onchange="changeColor('li-01');" id="color_01"
-                                                value="{{ $item->color }}" class="input-color-todolist" type="color" />
+                                                value="{{ $item->color }}" class="input-color-todolist"
+                                                type="color" />
                                         </div>
                                     </li>
                                 @endforeach

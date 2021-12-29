@@ -43,7 +43,7 @@ Route::prefix('user')->group(function () {
             $user = Auth::user();
             $danhMucs  = DB::table('danhmuc')->get();
             return view("web.ViewHome", ['user' => $user, 'danhMucs' => $danhMucs]);
-        });
+        })->name("ViewSchedule");
         Route::delete('{id}', [CongViecController::class, 'deleteCongViec']);
         Route::get('{id}', [CongViecController::class, 'getCongViecById']);
         Route::get('', [CongViecController::class, 'getAllCongViec']);
