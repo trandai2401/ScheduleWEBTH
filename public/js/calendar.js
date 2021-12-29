@@ -404,3 +404,5 @@ function nextDay() {
 
 document.onload = generateCalendar(date);
 
+// var btnChonNgayTrenBangLich = document.getElementsByClassName("btn-day active");
+// btnChonNgayTrenBangLich[0].click()

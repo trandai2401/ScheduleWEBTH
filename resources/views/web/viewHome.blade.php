@@ -27,7 +27,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet" />
 
     <!-- Style -->
-    <link rel="stylesheet" href="style/index.css" />
+    <link rel="stylesheet" href="http://localhost/ScheduleWEBTH/public/style/index.css" />
     <link rel="stylesheet" href="style/style-table-calendar.scss" />
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -582,7 +582,12 @@
                 console.error(error);
             });
 
+
+
+
         var idSTT = 5;
+
+
 
         function addTotoList() {
             var ulTodolist = document.getElementById("myUL-todolist");
@@ -734,8 +739,10 @@
             }
 
             tbody.appendChild(tr);
-        }
 
+        }
+        var btnChonNgayTrenBangLich = document.getElementsByClassName("btn-day active");
+        btnChonNgayTrenBangLich[0].click()
         //Đổ giwof vào select giwof bắt đầu
         function doDuLieuVaoSelect() {}
 
@@ -771,7 +778,8 @@
             callApiAddCongViec(tieuDe.value, editor.getData(), inputNgay.value, gioBatDau.value, gioKetThuc.value,
                 selectDanhMuc
                 .value, selectDanhMuc.options[selectDanhMuc.selectedIndex].className);
-
+            tieuDe.value = "";
+            editor.setData("");
         }
 
         function closeFromChiTiet() {
@@ -796,7 +804,6 @@
                 data: form,
                 contentType: false,
                 processData: false
-
                 // {
                 //     _token: "{{ csrf_token() }}",
                 //     images: imagefile
