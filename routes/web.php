@@ -49,4 +49,8 @@ Route::prefix('user')->group(function () {
         Route::get('', [CongViecController::class, 'getAllCongViec']);
         Route::post('', [CongViecController::class, 'postCongViec'])->name('schedule');
     });
+
+    Route::get('profile', function(){
+        return view("web.ViewProfile");
+    });
 });
