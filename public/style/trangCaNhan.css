@@ -1,0 +1,213 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+* {
+    font-family: 'Varela Round', sans-serif;
+    
+	margin: 0;
+	padding: 0;
+}
+
+body {
+    background:  url(../img/file-svg/sky.svg)  50% 40% no-repeat ;
+}
+
+#main-body{
+    position: relative;
+    top: 80px;
+}
+
+#profile-user .row #avt{
+    display: flex;
+    justify-content: center;
+}
+
+.main-body-content{
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+}
+
+.main-body-content img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+}
+
+/* <!-- thong tin nguoi dung --> */
+
+.title-info.name-user{
+    font-size: 25px;
+    color: rgb(107, 107, 107);
+    margin-top: 10px;
+}
+
+#btn-edit-profile{
+    font-size: 15px;
+    height: 40px;
+    width: 257;
+    margin: 0 30px;
+    border: 0.7px solid black;
+}
+
+.title-info.name-gmail{
+    text-decoration: none;
+    color: rgb(107, 107, 107);
+    font-size: 13px;
+}
+
+.title-info.target{
+    width: 70%;
+    margin: 20px 0px;
+    font-family:  'Lobster', cursive;
+    font-size: 20px;
+    font-weight: lighter;
+}
+
+@media only screen and (max-width: 767px){
+    
+    #profile-user .row #avt{
+        display: flex;
+        justify-content: left;
+    }
+.main-body-content{
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+}
+
+.main-body-content img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+}
+.title-info.name-user{
+    font-size: 20px;
+    color: rgb(107, 107, 107);
+    margin-top: 10px;
+}
+
+
+#btn-edit-profile{
+    font-size: 15px;
+    height: 40px;
+    width: 257;
+    margin: 0 0px;
+    border: 0.7px solid black;
+}
+
+.title-info.name-gmail{
+    margin-top: 10px;
+    text-decoration: none;
+    color: rgb(107, 107, 107);
+    font-size: 12px;
+}
+
+.title-info.target{
+    font-size: 15px;
+    width: 100%;
+    margin: 10px 0px;
+}
+}
+
+@media only screen and (max-width: 600px){
+    .title-info.target{
+        font-size: 12px;
+        width: 100%;
+        margin-top: -20px;
+    }
+}
+
+@media only screen and (max-width: 414px){
+    .main-body-content{
+        width: 80px;
+        height: 80px;
+        overflow: hidden;
+    }
+    
+    .main-body-content img {
+        width: 80px;
+        height: 80px;
+        object-fit: cover;
+    }
+    .title-info.name-user{
+        font-size: 17px;
+        color: rgb(107, 107, 107);
+        margin-top: 10px;
+    }
+    
+    
+    #btn-edit-profile{
+        font-size: 13px;
+        height: 40px;
+        width: 257;
+        margin: 0 0px;
+        border: 0.7px solid black;
+    }
+    
+    .title-info.name-gmail{
+        margin-top: 10px;
+        text-decoration: none;
+        color: rgb(107, 107, 107);
+        font-size: 12px;
+    }
+    
+    .title-info.target{
+        font-size: 12px;
+        width: 100%;
+        margin-top: -20px;
+    }
+}
+
+/* form edit user profile */
+
+#exampleModalLongTitle{
+    font-size: 15px;
+    font-weight: bolder;
+}
+
+#exampleModalCenter .edit_img_avatar .rounded-circle{
+    width: 70px;
+    height: 70px;
+    overflow: hidden;
+}
+
+#exampleModalCenter .edit_img_avatar .avatar_img img{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+
+}
+
+.title_edit_img{
+    font-size: 13px;
+    font-weight: bold;
+    color: rgb(99, 95, 95);
+}
+
+#input_file_avt{
+    border: 1px solid black;
+}
+
+.custom-file-label{
+    font-size: 13px;
+}
+
+.custom-file-input:lang(en) ~ .custom-file-label::after {
+    content: "";
+    background-color: white;
+    border: white solid;
+}
+
+#btn_close_form_edit{
+    background-color: #dc3545;
+    color: white;
+    font-size: 13px;
+    height: 40px;
+}
+
+#btn_save_form_edit{
+    background-color: #1a6477;
+    color: white;
+    font-size: 13px;
+    height: 40px;
+
+}
