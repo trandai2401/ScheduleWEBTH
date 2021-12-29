@@ -559,18 +559,19 @@
                     </div>
 
                     <!-- Dialog - Thong bao -->
-                    <div class="d-flex justify-content-center">
-                        <div id="thongbao" style="display: block;">                   
-                        <div class="card text-dark text-center mb-3">
-                            <div class="card-header title-thongbao py-2" style="background-color: #75e9d5;">Thông báo</div>
-                            <div class="card-body" style="background-color: rgb(255,214,214, 0.4) !important;">
-                            <img src="img/svg/ok_bell.png" alt="">
-                            <p id="thongbao_content" class="card-text mt-4">Bạn vừa thêm một sự kiện mới vào lịch của mình!</p>
-                            </div>
-                        </div>
+             
+
+                </div>
+                <div class="d-flex justify-content-center">
+                    <div id="thongbao" style="top:50px">                   
+                    <div class="card text-dark text-center mb-3">
+                        <div class="card-header title-thongbao py-2" style="background-color: #75e9d5;">Thông báo</div>
+                        <div class="card-body" style="background-color: rgb(255,214,214, 0.4) !important;">
+                        <img src="img/svg/ok_bell.png" alt="">
+                        <p id="thongbao_content" class="card-text mt-4">Bạn vừa thêm một sự kiện mới vào lịch của mình!</p>
                         </div>
                     </div>
-
+                    </div>
                 </div>
             </div>
         </div>
@@ -841,20 +842,22 @@
         // thông báo - THU HOA NE ny nghiêm quá, em sợ
         
         function thongBaoDialog(){
-            
+            var div = $("#thongbao");
                     setTimeout(function () {
                         var div = $("#thongbao");
                         div[0].style.display = "block";
                     }, 0);
+
                     div.animate({ top: '100px' }, 100);
+
+                    // setTimeout(function () {
+                    //     var div = $("#thongbao");
+                    //     div.animate({ top: '0px' }, 100);
+                    // }, 1900);
+
+
                     setTimeout(function () {
                         var div = $("#thongbao");
-                        div.animate({ top: '0px' }, 100);
-                    }, 1900);
-
-
-                    setTimeout(function () {
-                        var div3 = $("#thongbao");
                         div[0].style.display = "none";
                     }, 2000);
                     console.log("dhqwdhi");
