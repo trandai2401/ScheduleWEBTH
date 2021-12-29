@@ -741,8 +741,10 @@
             tbody.appendChild(tr);
 
         }
-        var btnChonNgayTrenBangLich = document.getElementsByClassName("btn-day active");
-        btnChonNgayTrenBangLich[0].click()
+        setTimeout(function() {
+            var btnChonNgayTrenBangLich = document.getElementsByClassName("btn-day active");
+            btnChonNgayTrenBangLich[0].click()
+        }, 50)
         //Đổ giwof vào select giwof bắt đầu
         function doDuLieuVaoSelect() {}
 
