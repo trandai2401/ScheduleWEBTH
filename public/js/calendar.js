@@ -231,11 +231,14 @@ function changeDate(button) {
     ngaythu6.innerText = dateDisplay.getDate();
 
     dateDisplay = new Date(dateDisplay.getFullYear(), dateDisplay.getMonth(), dateDisplay.getDate() + 1);
-    console.log("Thứ 7 là ngày: " + dateDisplay.getDate());
+    console.log("Thứ 7 là ngày: " + dateDisplay.getFullYear());
     var ngaythu7 = document.getElementById("ngayt7");
     var thangThu7 = document.getElementById("thang_thu7");
     thangThu7.innerText = dateDisplay.getMonth() + 1;
-    ngaythu7.innerText = date.getDate();
+    ngaythu7.innerText = dateDisplay.getDate();
+
+
+
     var dateStart = new Date(dateDisplay.getFullYear(), dateDisplay.getMonth(), dateDisplay.getDate() - 5);
 
     console.log("" + dateStart.getFullYear() + "/" + (dateStart.getMonth() + 1) + "/" + (dateStart.getDate()))

@@ -63,8 +63,6 @@ class CongViecController extends Controller
         $user = Auth::user();
         $res = DB::select('select cv.id,cv.tieude,ngay,giobatdau,gioketthuc,color from congviec as cv,user_congviecs as uc,danhmuc as dm where cv.id_danhmuc = dm.id and uc.id_congviec = cv.id and uc.id_user = ?  and ((ngay >= ? and ngay <= ?) or uc.laplai = 1)
         ', [$user->id, $request->ngayBatDau, $request->ngayKetThuc]);
-
-
         return  $res;
     }
 
@@ -83,5 +81,28 @@ class CongViecController extends Controller
             return 1;
         }
         return 0;
+    }
+
+    function getThongKe(Request $request)
+    {
+        $user = Auth::user();
+        // $res = DB::select('select dayofweek(ngay)-1 as thu ,count(uc.id_congviec) as soluong from congviec as cv,user_congviecs as uc,danhmuc as dm where 
+        // cv.id_danhmuc = dm.id and 
+        // uc.id_congviec = cv.id and 
+        // uc.id_user = 2  and 
+        // ((ngay >= "2021/12/27" and ngay <= "2022/1/1") or uc.laplai = 1)
+        // group by thu
+        // ;', [$user->id, $request->ngayBatDau, $request->ngayKetThuc]);
+
+
+        $res = DB::select('select dayofweek(ngay)-1 as thu ,count(uc.id_congviec) as soluong from congviec as cv,user_congviecs as uc,danhmuc as dm where 
+        cv.id_danhmuc = dm.id and 
+        uc.id_congviec = cv.id and 
+        uc.id_user = ?  and 
+        ((ngay >= ? and ngay <= ?) or uc.laplai = 1)
+        group by thu
+        ;', [$user->id, $request->ngayBatDau, $request->ngayKetThuc]);
+
+        return  $res;
     }
 }
