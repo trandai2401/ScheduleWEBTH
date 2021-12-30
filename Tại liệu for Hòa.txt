@@ -47,3 +47,22 @@ OUTPUT:
 }
 
 Yêu cầu : Đã đăng nhập tài khoản
+
+
+====================================================================================
+
+
+Đường dẫn : http://localhost/ScheduleWEBTH/public/user/postimageprofile
+name : postimageprofile
+
+INPUT :
+{
+	_token : "234589dfsg9sd024bl",
+	images: "Du lieu"
+}
+
+OUTPUT:
+
+http://localhost/ScheduleWEBTH/public/image/avatax.jpg
+
+Yêu cầu : Đã đăng nhập tài khoản

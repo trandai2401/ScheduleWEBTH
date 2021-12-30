@@ -86,5 +86,5 @@ Route::prefix('user')->group(function () {
         } else {
             echo "không";
         }
-    });
+    })->name("postimageprofile");
 });
