@@ -23,10 +23,11 @@ class Congviec extends Migration
             $table->unsignedBigInteger('id_user');
             $table->unsignedBigInteger('id_danhmuc');
 
-
+         
             $table->foreign('id_user')->references('id')->on('users');
             $table->foreign('id_danhmuc')->references('id')->on('danhmuc');
             $table->timestamps();
+          
         });
     }
 

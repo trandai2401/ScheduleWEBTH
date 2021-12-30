@@ -28,7 +28,7 @@
 
     <!-- Style -->
     <link rel="stylesheet" href="http://localhost/ScheduleWEBTH/public/style/index.css" />
-    <link rel="stylesheet" href="style/style-table-calendar.scss" />
+
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 
@@ -445,7 +445,7 @@
                             <div class="col-6">
                                 <label for="" style="font-size: 13px; font-weight: 600">Thêm bạn bè của bạn</label>
 
-                                <input type="text" class="form-control">
+                                <input id="input_thembanbe" type="text" class="form-control">
                             </div>
                             <div class="col-6"> </div>
                         </div>
@@ -559,18 +559,20 @@
                     </div>
 
                     <!-- Dialog - Thong bao -->
-             
+
 
                 </div>
                 <div class="d-flex justify-content-center">
-                    <div id="thongbao" style="top:50px">                   
-                    <div class="card text-dark text-center mb-3">
-                        <div class="card-header title-thongbao py-2" style="background-color: #75e9d5;">Thông báo</div>
-                        <div class="card-body" style="background-color: rgb(255,214,214, 0.4) !important;">
-                        <img src="img/svg/ok_bell.png" alt="">
-                        <p id="thongbao_content" class="card-text mt-4">Bạn vừa thêm một sự kiện mới vào lịch của mình!</p>
+                    <div id="thongbao" style="top:50px">
+                        <div class="card text-dark text-center mb-3">
+                            <div class="card-header title-thongbao py-2" style="background-color: #75e9d5;">Thông báo
+                            </div>
+                            <div class="card-body" style="background-color: rgb(255,214,214, 0.4) !important;">
+                                <img src="img/svg/ok_bell.png" alt="">
+                                <p id="thongbao_content" class="card-text mt-4">Bạn vừa thêm một sự kiện mới vào lịch
+                                    của mình!</p>
+                            </div>
                         </div>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -757,7 +759,7 @@
         setTimeout(function() {
             var btnChonNgayTrenBangLich = document.getElementsByClassName("btn-day active");
             btnChonNgayTrenBangLich[0].click()
-        }, 50)
+        }, 100)
         //Đổ giwof vào select giwof bắt đầu
         function doDuLieuVaoSelect() {}
 
@@ -785,13 +787,15 @@
             var date_tam02 = new Date(inputNgay.value);
             var thuTrongTuanTheolichBanThan = date_tam02.getDay() + 1;
             var ChonGio = document.getElementById("selected-time-start");
-
+            var checkbox_laplai = document.getElementById("checkbox_laplai");
+            var input_thembanbe = document.getElementById("input_thembanbe");
             callApiAddCongViec(tieuDe.value, editor.getData(), inputNgay.value, gioBatDau.value, gioKetThuc.value,
                 selectDanhMuc
-                .value, selectDanhMuc.options[selectDanhMuc.selectedIndex].className);
+                .value, selectDanhMuc.options[selectDanhMuc.selectedIndex].className, checkbox_laplai.checked,
+                input_thembanbe.value);
             tieuDe.value = "";
             editor.setData("");
-            
+
         }
 
         function closeFromChiTiet() {
@@ -799,7 +803,7 @@
             formEvent.style.display = "none";
         }
 
-        function callApiAddCongViec(tieuDe, noiDung, ngay, gioBatDau, gioketThuc, idDanhMuc, color) {
+        function callApiAddCongViec(tieuDe, noiDung, ngay, gioBatDau, gioketThuc, idDanhMuc, color, lapLai, banBe) {
             var form = new FormData();
             form.append('_token', '{{ csrf_token() }}');
             form.append('tieude', tieuDe);
@@ -809,6 +813,8 @@
             form.append('gioketthuc', gioketThuc);
             form.append('iddanhmuc', idDanhMuc);
             form.append('iduser', idDanhMuc);
+            form.append('laplai', lapLai);
+            form.append('banbe', banBe);
             $.ajax({
                 method: 'post',
                 url: "{{ route('schedule') }}",
@@ -826,47 +832,49 @@
                 console.log(gioketThuc - gioBatDau);
                 createCardCongViec(result.id, result.tieude, d.getDay() + 1, gioBatDau, gioketThuc - gioBatDau,
                     color);
-                    thongBaoDialog();
+                thongBaoDialog();
                 // var res = JSON.parse(result);
                 // thongBao("alert-success", "Đã thêm " + res.soLuongThayDoi + " nông sản này vào giỏ hàng");
             }).fail(function(result) {
                 console.log(result);
             })
 
-            
+
 
         }
 
 
 
         // thông báo - THU HOA NE ny nghiêm quá, em sợ
-        
-        function thongBaoDialog(){
+
+        function thongBaoDialog() {
             var div = $("#thongbao");
-                    setTimeout(function () {
-                        var div = $("#thongbao");
-                        div[0].style.display = "block";
-                    }, 0);
+            setTimeout(function() {
+                var div = $("#thongbao");
+                div[0].style.display = "block";
+            }, 0);
 
-                    div.animate({ top: '100px' }, 100);
+            div.animate({
+                top: '100px'
+            }, 300);
 
-                    // setTimeout(function () {
-                    //     var div = $("#thongbao");
-                    //     div.animate({ top: '0px' }, 100);
-                    // }, 1900);
+            // setTimeout(function () {
+            //     var div = $("#thongbao");
+            //     div.animate({ top: '0px' }, 100);
+            // }, 1900);
 
 
-                    setTimeout(function () {
-                        var div = $("#thongbao");
-                        div[0].style.display = "none";
-                    }, 2000);
-                    console.log("dhqwdhi");
+            setTimeout(function() {
+                var div = $("#thongbao");
+                div[0].style.display = "none";
+            }, 2000);
+            console.log("dhqwdhi");
 
         }
-                
-                    
-                
-           
+
+
+
+
         // function createCardCongViec(id, tieuDe, thu, gio, thoiGianKeoDai, mauSac) {
         //     var div = document.createElement("div");
 
@@ -958,13 +966,11 @@
         }
 
         function callApiGetDanhMuc() {}
-
-    
     </script>
 
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
     <script src="https://kit.fontawesome.com/812e771e48.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="js/calendar.js"></script>
     <script type="text/javascript" src="js/todolist-mycalendar.js"></script>
@@ -978,12 +984,12 @@
     <script src="js/scripts.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
 
-    <script src="assets/demo/chart-bar-demo.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/simple-datatables@latest" crossorigin="anonymous"></script>
+
+
     <script src="js/datatables-simple-demo.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
         crossorigin="anonymous"></script>
-    <script src="assets/demo/chart-area-demo.js"></script>
+
 </body>
 
 </html>
