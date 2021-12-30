@@ -40,6 +40,9 @@ Route::post('signup', [SignUpController::class, 'postSignUp'])->name('signup');
 
 Route::prefix('user')->group(function () {
     Route::prefix('/schedule')->group(function () {
+
+
+
         Route::get('view', function (Request $request) {
             $user = Auth::user();
             $danhMucs  = DB::table('danhmuc')->get();
@@ -49,6 +52,11 @@ Route::prefix('user')->group(function () {
         Route::get('{id}', [CongViecController::class, 'getCongViecById']);
         Route::get('', [CongViecController::class, 'getAllCongViec']);
         Route::post('', [CongViecController::class, 'postCongViec'])->name('schedule');
+
+        Route::prefix('thongke')->group(function () {
+
+            Route::get('tuan', [CongViecController::class, 'getThongKe'])->name("thongKeTheoTuan");
+        });
     });
 
     Route::get('profile', function () {
@@ -83,7 +91,6 @@ Route::prefix('user')->group(function () {
             $images = $request->images;
             $images->move("image", 'avata' . $user->id . '.jpg');
             return "http://localhost/ScheduleWEBTH/public/image/avata" . $user->id . ".jpg";
-
         } else {
             echo "không";
         }

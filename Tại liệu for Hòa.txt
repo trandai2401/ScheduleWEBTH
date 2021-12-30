@@ -66,3 +66,45 @@ OUTPUT:
 http://localhost/ScheduleWEBTH/public/image/avatax.jpg
 
 Yêu cầu : Đã đăng nhập tài khoản
+
+====================================================================================
+
+
+Đường dẫn : http://localhost/ScheduleWEBTH/public/user/schedule/thongke/tuan
+name : thongKeTheoTuan
+METHOD: GET /schedule
+
+
+INPUT :
+{
+    "ngayBatDau" : "2021/12/27",
+    "ngayKetThuc" : "2022/1/1"
+}
+
+OUTPUT:
+
+[
+	{
+		thu: 2,
+		soluong: 1
+	},
+	{
+		thu: 3,
+		soluong: 2
+	},
+	{
+		thu: 5,
+		soluong: 1
+	},
+	{
+		thu: 1,
+		soluong: 1
+	},
+	{
+		thu: 6,
+		soluong: 2
+	}
+]
+
+
+Yêu cầu : Đã đăng nhập tài khoản
