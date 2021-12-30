@@ -278,13 +278,20 @@
                             </div>
                         </div>
                     </div>
-
+                    <!-- btn - danh mục lịch -->
                     <div class="mycalendar">
                         <button type="button" class="btn btn-sm" id="btn-create-mycalendar" data-toggle="modal"
                             data-target="#exampleModalCenter">
                             Tạo mới lịch
                         </button>
                     </div>
+
+                    <!-- btn thông kê -->
+                    <!-- btn - thống kê theo ngày -->
+                    <div class="thongKeSuKien w100" data-toggle="modal" data-target="#exampleModalCenter_02">
+                        <button id="btn_thongke">Thống kê</button>
+                    </div>
+
                 </div>
             </nav>
         </div>
@@ -562,6 +569,7 @@
              
 
                 </div>
+
                 <div class="d-flex justify-content-center">
                     <div id="thongbao" style="top:50px">                   
                     <div class="card text-dark text-center mb-3">
@@ -572,6 +580,109 @@
                         </div>
                     </div>
                     </div>
+                </div>
+
+            </div>
+
+            <!-- Dialog - Thống kê coog việc  -->
+            <!-- Modal -->
+            <div class="modal fade" id="exampleModalCenter_02" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">Thống kê công việc</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body" id="body_thongbao">
+                    <div class="row">
+                        <div class="col-6 my-3">
+                        <div class="card-content-col">
+                            <div>
+                            <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
+                            </div>
+                            <div class="title px-3">
+                            <label for=""><b>Thứ hai</b></label>
+                            <br>
+                            <label for="">Công việc hiện có: </label> <label for="">9</label>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="col-6 my-3">
+                        <div class="card-content-col">
+                            <div>
+                            <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
+                            </div>
+                            <div class="title px-3">
+                            <label for=""><b>Thứ hai</b></label>
+                            <br>
+                            <label for="">Công việc hiện có: </label> <label for="">9</label>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="col-6 my-3">
+                        <div class="card-content-col">
+                            <div>
+                            <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
+                            </div>
+                            <div class="title px-3">
+                            <label for=""><b>Thứ hai</b></label>
+                            <br>
+                            <label for="">Công việc hiện có: </label> <label for="">9</label>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="col-6 my-3">
+                        <div class="card-content-col">
+                            <div>
+                            <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
+                            </div>
+                            <div class="title px-3">
+                            <label for=""><b>Thứ hai</b></label>
+                            <br>
+                            <label for="">Công việc hiện có: </label> <label for="">9</label>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="col-6 my-3">
+                        <div class="card-content-col">
+                            <div>
+                            <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
+                            </div>
+                            <div class="title px-3">
+                            <label for=""><b>Thứ hai</b></label>
+                            <br>
+                            <label for="">Công việc hiện có: </label> <label for="">9</label>
+                            </div>
+                        </div>
+                        </div>
+
+                        <div class="col-6 my-3">
+                        <div class="card-content-col">
+                            <div>
+                            <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
+                            </div>
+                            <div class="title px-3">
+                            <label for=""><b>Thứ hai</b></label>
+                            <br>
+                            <label for="">Công việc hiện có: </label> <label for="">9</label>
+                            </div>
+                        </div>
+                        </div>
+
+                        
+                    </div>
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
                 </div>
             </div>
         </div>

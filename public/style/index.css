@@ -705,3 +705,20 @@ input[type="color"] {
     color: #ef2243;
   }
 
+  
+/* Dialog - Thống kê coog việc */
+
+#exampleModalCenter_02 #body_thongbao .card-content-col{
+    display: flex;
+    justify-content: center;
+}
+
+#exampleModalCenter_02 #body_thongbao .card-content-col img{
+    height: 50px;
+    width: 50px;
+}
+
+
+#exampleModalCenter_02 #body_thongbao .title{
+font-size: 13px;
+}

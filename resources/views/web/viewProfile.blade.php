@@ -305,7 +305,7 @@
 
                       </div>
                       <div class="col-8">
-                        <textarea rows="4" class="w-100">  
+                        <textarea id="input_target" rows="4" class="w-100">  
                           
                         </textarea>  
                       </div>
@@ -314,7 +314,7 @@
                 </div>
                 <div class="modal-footer">
                 <button type="button" id="btn_close_form_edit" class="btn" data-dismiss="modal">Đóng</button>
-                <button type="button" id="btn_save_form_edit" class="btn">Save changes</button>
+                <button onclick="callApiSetThongTin();" type="button" id="btn_save_form_edit" class="btn">Save changes</button>
                 </div>
             </div>
             </div>
@@ -350,7 +350,7 @@
       }
     })
 
-    // ko có dị
+    // call api get
 
     function callApiGetThongTin() {
             var form = new FormData();
@@ -384,6 +384,46 @@
             })
         }
     callApiGetThongTin();
+
+    // call api post
+    function callApiSetThongTin() {
+            var nameUser = document.getElementById("input_name_user");
+            var gmailUser = document.getElementById("input_gmail_user");
+           var target = document.getElementById("input_target");
+            var form = new FormData();
+            form.append("_token", "{{ csrf_token() }}");
+            form.append("name", input_name_user.value);
+            form.append("email", input_gmail_user.value);
+            form.append("taget", input_target.value);
+
+
+            $.ajax({
+                method: 'post',
+                url: "{{ route('postprofile') }}",
+                // url: "http://localhost/ScheduleWEBTH/public/user/setprofile",
+                context: document.body,
+                data: form,
+                contentType: false,
+                processData: false
+                
+            }).done(function(result) {
+              var ten = document.getElementById("ten_NguoiDung");
+                ten.innerText = result.name;
+
+                var gmail = document.getElementById("gmail_NguoiDung");
+                gmail.innerText = result.email;
+
+                var target = document.getElementById("target_NguoiDung");
+                target.innerText = result.taget;
+
+                var avata = document.getElementById("img_avatar_main");
+                avata.src = result.linkanhavata;
+                console.log(result);
+
+            }).fail(function(result) {
+                console.log(result);
+            })
+        }
 
   </script>
 
