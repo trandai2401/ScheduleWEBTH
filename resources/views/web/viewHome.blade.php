@@ -288,8 +288,8 @@
 
                     <!-- btn thông kê -->
                     <!-- btn - thống kê theo ngày -->
-                    <div class="thongKeSuKien w100" data-toggle="modal" data-target="#exampleModalCenter_02">
-                        <button id="btn_thongke">Thống kê</button>
+                    <div  class="thongKeSuKien w100" data-toggle="modal" data-target="#exampleModalCenter_02">
+                        <button onclick="callApiThongKeCongViec();" id="btn_thongke">Thống kê</button>
                     </div>
 
                 </div>
@@ -594,7 +594,7 @@
                     <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Thống kê công việc</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">&times;</span> 
                     </button>
                     </div>
                     <div class="modal-body" id="body_thongbao">
@@ -607,7 +607,7 @@
                             <div class="title px-3">
                             <label for=""><b>Thứ hai</b></label>
                             <br>
-                            <label for="">Công việc hiện có: </label> <label for="">9</label>
+                            <label for="">Công việc hiện có: </label> <label id="tk_thu2" for="">0</label>
                             </div>
                         </div>
                         </div>
@@ -618,9 +618,9 @@
                             <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
                             </div>
                             <div class="title px-3">
-                            <label for=""><b>Thứ hai</b></label>
+                            <label for=""><b>Thứ ba</b></label>
                             <br>
-                            <label for="">Công việc hiện có: </label> <label for="">9</label>
+                            <label for="">Công việc hiện có: </label> <label id="tk_thu3" for="">0</label>
                             </div>
                         </div>
                         </div>
@@ -631,9 +631,9 @@
                             <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
                             </div>
                             <div class="title px-3">
-                            <label for=""><b>Thứ hai</b></label>
+                            <label for=""><b>Thứ tư</b></label>
                             <br>
-                            <label for="">Công việc hiện có: </label> <label for="">9</label>
+                            <label for="">Công việc hiện có: </label> <label id="tk_thu4" for="">0</label>
                             </div>
                         </div>
                         </div>
@@ -644,9 +644,9 @@
                             <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
                             </div>
                             <div class="title px-3">
-                            <label for=""><b>Thứ hai</b></label>
+                            <label for=""><b>Thứ năm</b></label>
                             <br>
-                            <label for="">Công việc hiện có: </label> <label for="">9</label>
+                            <label for="">Công việc hiện có: </label> <label id="tk_thu5" for="">0</label>
                             </div>
                         </div>
                         </div>
@@ -657,9 +657,9 @@
                             <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
                             </div>
                             <div class="title px-3">
-                            <label for=""><b>Thứ hai</b></label>
+                            <label for=""><b>Thứ sáu</b></label>
                             <br>
-                            <label for="">Công việc hiện có: </label> <label for="">9</label>
+                            <label for="">Công việc hiện có: </label> <label id="tk_thu6" for="">0</label>
                             </div>
                         </div>
                         </div>
@@ -670,9 +670,9 @@
                             <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
                             </div>
                             <div class="title px-3">
-                            <label for=""><b>Thứ hai</b></label>
+                            <label id="" for=""><b>Thứ bảy</b></label>
                             <br>
-                            <label for="">Công việc hiện có: </label> <label for="">9</label>
+                            <label for="">Công việc hiện có: </label> <label id="tk_thu7" for="">0</label>
                             </div>
                         </div>
                         </div>
@@ -1077,6 +1077,46 @@
         }
 
         function callApiGetDanhMuc() {}
+
+
+        // Thoongs kee
+        function callApiThongKeCongViec() {
+            let inputDate  = document.getElementById("date");
+            let date = new Date(inputDate.value.replaceAll("-", "/"));
+            let ngayDung = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
+            console.log("Ngay dang chon la: " + ngayDung.getDate());
+
+            let ngayCN = new Date(date.getFullYear(), date.getMonth(),(date.getDate() - (ngayDung.getDay() ) + 1) );
+            console.log("chủ nha   " + ngayCN.getFullYear() + ngayCN.getMonth() + ngayCN.getDate());
+
+            let ngayT2 = new Date(ngayCN.getFullYear(), ngayCN.getMonth(), ngayCN.getDate() +1); 
+            console.log("t2   " + ngayT2.getFullYear() + "/" + (ngayT2.getMonth() + 1) + "/" + ngayT2.getDate());
+            
+            let ngayT7 = new Date(ngayCN.getFullYear(), ngayCN.getMonth() , ngayCN.getDate() + 6);
+            console.log("t7   " + ngayT7.getFullYear() + "/" + (ngayT7.getMonth() + 1)   + "/" + ngayT7.getDate());
+
+            
+            var form = new FormData();
+
+            // form.append('_token', '{{ csrf_token() }}');
+            
+            form.append('ngayBatDau', ngayT2.getFullYear() + "/" + (ngayT2.getMonth() + 1) + "/" + ngayT2.getDate());
+            form.append('ngayKetThuc', ngayT7.getFullYear() + "/" + (ngayT7.getMonth() + 1)   + "/" + ngayT7.getDate());
+
+            $.ajax({
+                method: 'get',
+                url: "http://localhost/ScheduleWEBTH/public/user/schedule/thongke/tuan",
+                context: document.body,
+                data: form,
+                contentType: false,
+                processData: false
+
+            }).done(function(result) {
+                console.log(result);
+            }).fail(function(result) {
+                console.log(result);
+            })
+        }
     </script>
 
 
