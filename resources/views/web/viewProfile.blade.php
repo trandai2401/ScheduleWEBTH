@@ -420,6 +420,35 @@
                 avata.src = result.linkanhavata;
                 console.log(result);
 
+                callApiSetImgAvatar();
+
+            }).fail(function(result) {
+                console.log(result);
+            })
+        }
+
+
+        function callApiSetImgAvatar() {
+            
+            var inputAvatar = document.getElementById("input_file_avt");
+          
+            var form = new FormData();
+            form.append("_token", "{{ csrf_token() }}");
+            form.append("images", inputAvatar.files[0]);
+
+            $.ajax({
+                method: 'post',
+                // url: "{{ route('postprofile') }}",
+                url: "http://localhost/ScheduleWEBTH/public/user/postimageprofile",
+                context: document.body,
+                data: form,
+                contentType: false,
+                processData: false
+                
+            }).done(function(result) {
+              console.log(result);
+              imgAvatarMain.src = result;
+
             }).fail(function(result) {
                 console.log(result);
             })

@@ -73,16 +73,17 @@ Route::prefix('user')->group(function () {
     Route::post('postimageprofile', function (Request $request) {
         if ($request->has('images')) {
 
-            $user  = Auth::user();
+            $user  = User::find(Auth::user()->id);
             $user->linkanhavata = "http://localhost/ScheduleWEBTH/public/image/avata" . $user->id . ".jpg";
             // DB::table('hinhanh')->insert([
             //     'id_nongsan' => $id,
             //     'src' => "img/image" . $id . ".jpg"
             // ]);
-
+            $user->save();
             $images = $request->images;
-            return "http://localhost/ScheduleWEBTH/public/image/avata" . $user->id . ".jpg";
             $images->move("image", 'avata' . $user->id . '.jpg');
+            return "http://localhost/ScheduleWEBTH/public/image/avata" . $user->id . ".jpg";
+
         } else {
             echo "không";
         }
