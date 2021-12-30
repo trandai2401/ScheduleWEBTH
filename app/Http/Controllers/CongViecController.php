@@ -47,6 +47,7 @@ class CongViecController extends Controller
                 $user_congviec2 = new user_congviec();
                 $user_congviec2->id_congviec = $congViec->id;
                 $user_congviec2->id_user = $banbe[0]->id;
+                $user_congviec2->laplai = ($request->laplai == "true" ? 1 : 0);
                 $user_congviec2->save();
             }
         }
