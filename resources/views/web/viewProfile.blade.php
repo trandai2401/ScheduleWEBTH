@@ -38,7 +38,8 @@
   <!-- Ck editor -->
   <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
 
-  <title>Trang cá nhân</title>
+  <link rel="icon" href="img/iconweb.png">
+  <title>Schedule</title>
   
   <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
   <link href="{{asset('style/style-admin/styles.css')}}" rel="stylesheet" />
@@ -180,13 +181,14 @@
           <span class="iconify" data-icon="fa-solid:user-circle" style="color: #1a6477; font-size: 30px"></span>
         </a>
         <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-          <li><a class="dropdown-item" href="#!">Cá nhân</a></li>
-          <li><a class="dropdown-item" href="#!">Lịch của tôi</a></li>
+          <li><a class="dropdown-item" href="#!">{{ $user->name }}</a></li>
+          <li><a class="dropdown-item" href="{{ route('profile') }}">Cá nhân</a></li>
+          <li><a class="dropdown-item" href="{{ route('ViewSchedule') }}">Lịch của tôi</a></li>
           <li>
-            <hr class="dropdown-divider" />
+              <hr class="dropdown-divider" />
           </li>
-          <li><a class="dropdown-item" href="#!">Đăng xuất</a></li>
-        </ul>
+          <li><a class="dropdown-item" href="{{ route('logout') }}">Đăng xuất</a></li>
+      </ul>
       </li>
     </ul>
   </nav>

@@ -34,7 +34,7 @@ Route::post('login', [LoginController::class, 'postLogin']);
 
 
 Route::post('signup', [SignUpController::class, 'postSignUp'])->name('signup');
-
+Route::get('logout', [LoginController::class, 'logout'])->name("logout");
 // Route::get('home', function () {
 //     return view("web.ViewHome");
 // })->name("home");
@@ -66,7 +66,8 @@ Route::prefix('user')->group(function () {
     });
 
     Route::get('profile', function () {
-        return view("web.ViewProfile");
+        $user  =Auth::user();
+        return view("web.ViewProfile",["user"=>$user]);
     })->name('profile');
 
     Route::get('getprofile', function () {
