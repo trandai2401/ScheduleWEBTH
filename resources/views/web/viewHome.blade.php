@@ -296,7 +296,7 @@
 
                     <!-- btn thông kê -->
                     <!-- btn - thống kê theo ngày -->
-                    <div  class="thongKeSuKien w100" data-toggle="modal" data-target="#exampleModalCenter_02">
+                    <div class="thongKeSuKien w100" data-toggle="modal" data-target="#exampleModalCenter_02">
                         <button onclick="callApiThongKeCongViec();" id="btn_thongke">Thống kê</button>
                     </div>
 
@@ -611,28 +611,14 @@
                 aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
 
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">Thống kê công việc</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span> 
-                    </button>
-                    </div>
-                    <div class="modal-body" id="body_thongbao">
-                    <div class="row">
-                        <div class="col-6 my-3">
-                        <div class="card-content-col">
-                            <div>
-                            <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
-                            </div>
-                            <div class="title px-3">
-                            <label for=""><b>Thứ hai</b></label>
-                            <br>
-                            <label for="">Công việc hiện có: </label> <label id="tk_thu2" for="">0</label>
-                            </div>
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Thống kê công việc</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
                         </div>
 
-                        </div>
                         <div class="modal-body" id="body_thongbao">
                             <div class="row">
                                 <div class="col-6 my-3">
@@ -643,601 +629,622 @@
                                         <div class="title px-3">
                                             <label for=""><b>Thứ hai</b></label>
                                             <br>
-                                            <label for="">Công việc hiện có: </label> <label for="">9</label>
+                                            <label for="">Công việc hiện có: </label> <label id="tk_thu2"
+                                                for="">0</label>
                                         </div>
                                     </div>
                                 </div>
 
 
-                        <div class="col-6 my-3">
-                        <div class="card-content-col">
-                            <div>
-                            <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
+                                <div class="col-6 my-3">
+                                    <div class="card-content-col">
+                                        <div>
+                                            <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
+                                        </div>
+                                        <div class="title px-3">
+                                            <label for=""><b>Thứ ba</b></label>
+                                            <br>
+                                            <label for="">Công việc hiện có: </label> <label id="tk_thu3"
+                                                for="">0</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 my-3">
+                                    <div class="card-content-col">
+                                        <div>
+                                            <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
+                                        </div>
+                                        <div class="title px-3">
+                                            <label for=""><b>Thứ tư</b></label>
+                                            <br>
+                                            <label for="">Công việc hiện có: </label> <label id="tk_thu4"
+                                                for="">0</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 my-3">
+                                    <div class="card-content-col">
+                                        <div>
+                                            <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
+                                        </div>
+                                        <div class="title px-3">
+                                            <label for=""><b>Thứ năm</b></label>
+                                            <br>
+                                            <label for="">Công việc hiện có: </label> <label id="tk_thu5"
+                                                for="">0</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 my-3">
+                                    <div class="card-content-col">
+                                        <div>
+                                            <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
+                                        </div>
+                                        <div class="title px-3">
+                                            <label for=""><b>Thứ sáu</b></label>
+                                            <br>
+                                            <label for="">Công việc hiện có: </label> <label id="tk_thu6"
+                                                for="">0</label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-6 my-3">
+                                    <div class="card-content-col">
+                                        <div>
+                                            <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
+                                        </div>
+                                        <div class="title px-3">
+                                            <label id="" for=""><b>Thứ bảy</b></label>
+                                            <br>
+                                            <label for="">Công việc hiện có: </label> <label id="tk_thu7"
+                                                for="">0</label>
+
+                                        </div>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" onclick="resetDataThongke()" class="btn btn-secondary"
+                                            data-dismiss="modal">Close</button>
+                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                    </div>
+                                </div>
                             </div>
-                            <div class="title px-3">
-                            <label for=""><b>Thứ ba</b></label>
-                            <br>
-                            <label for="">Công việc hiện có: </label> <label id="tk_thu3" for="">0</label>
-                            </div>
-                        </div>
                         </div>
 
-                        <div class="col-6 my-3">
-                        <div class="card-content-col">
-                            <div>
-                            <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
-                            </div>
-                            <div class="title px-3">
-                            <label for=""><b>Thứ tư</b></label>
-                            <br>
-                            <label for="">Công việc hiện có: </label> <label id="tk_thu4" for="">0</label>
-                            </div>
-                        </div>
-                        </div>
-
-                        <div class="col-6 my-3">
-                        <div class="card-content-col">
-                            <div>
-                            <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
-                            </div>
-                            <div class="title px-3">
-                            <label for=""><b>Thứ năm</b></label>
-                            <br>
-                            <label for="">Công việc hiện có: </label> <label id="tk_thu5" for="">0</label>
-                            </div>
-                        </div>
-                        </div>
-
-                        <div class="col-6 my-3">
-                        <div class="card-content-col">
-                            <div>
-                            <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
-                            </div>
-                            <div class="title px-3">
-                            <label for=""><b>Thứ sáu</b></label>
-                            <br>
-                            <label for="">Công việc hiện có: </label> <label id="tk_thu6" for="">0</label>
-                            </div>
-                        </div>
-                        </div>
-
-                        <div class="col-6 my-3">
-                        <div class="card-content-col">
-                            <div>
-                            <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
-                            </div>
-                            <div class="title px-3">
-                            <label id="" for=""><b>Thứ bảy</b></label>
-                            <br>
-                            <label for="">Công việc hiện có: </label> <label id="tk_thu7" for="">0</label>
-
-                            </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                            <button type="button" class="btn btn-primary">Save changes</button>
-                        </div>
                     </div>
+
                 </div>
-            </div>
 
-        </div>
-
-    </div>
-
-    <script type="text/javascript">
-        var selectDanhMuc = document.getElementById("selected-my-calendar");
-        var inputMau_bg = document.getElementById("input-color-addEvent");
-        selectDanhMuc.addEventListener("change", function() {
-            inputMau_bg.value = this.options[this.selectedIndex].className;
-        })
-
-        var editor;
-
-        ClassicEditor
-            .create(document.querySelector('#editor'))
-            .then(newEditor => {
-                editor = newEditor;
-            })
-            .catch(error => {
-                console.error(error);
-            });
-
-
-
-
-        var idSTT = 5;
-
-
-
-        function addTotoList() {
-            var ulTodolist = document.getElementById("myUL-todolist");
-            var textTodolist = document.getElementById("myInput-todolist").value;
-            var div = document.createElement("DIV");
-
-            div.innerHTML =
-                '<li id="li-0' +
-                idSTT +
-                '" class="muLI-todolist"> <span class="text-li-todolist">' +
-                textTodolist +
-                '</span> <div class="d-flex"> <button onclick="deleteTodolist(&apos;li-0' +
-                idSTT++ +
-                '&apos;)" class="btn-delete-todolist"><span class="iconify" data-icon="bi:x-square-fill" style="font-size: 25px; color: #ee183b;"></span></button> <input class="input-color-todolist" type="color"> </div> </li>';
-            ulTodolist.appendChild(div);
-        }
-
-        function changeColor(idLi) {
-            var idColor = color_0 + "(idSTT++)";
-            var valueColor = document.getElementById(idColor).value;
-            var li = document.getElementById(idLi);
-            li.style.background = valueColor;
-            console.log(valueColor);
-        }
-
-        function deleteTodolist(idLi) {
-            var li = document.getElementById(idLi);
-            li.remove();
-        }
-
-        // function dành cho bên trái menu
-        function showMyCalendar() {
-            var ulTodolist = document.getElementById("ul-leftTodoList");
-            var textTodolist = document.getElementById("li-01");
-            var text = textTodolist.innerText;
-            var div = document.createElement("DIV");
-            div.innerHTML =
-                '<li class="li-leftTodolist" style="background-color: #ddb547;"> ' +
-                text +
-                " </li>";
-            ulTodolist.appendChild(div);
-            console.log("djie");
-        }
-
-        function printTodoList() {
-            var arrayTodoList;
-            arrayTodoList = document.getElementsByClassName("muLI-todolist");
-            for (var i of arrayTodoList) {
-                console.log(i.textContent);
-            }
-        }
-
-        var tbody = document.getElementById("tbody");
-        for (let gio = 1; gio < 25; gio++) {
-            var tr = document.createElement("tr");
-            var th = document.createElement("th");
-            var option = document.createElement("option");
-            option.id = "idGio-start" + gio;
-            option.value = gio;
-            option.innerText = "" + gio + " : 00";
-            var select = document.getElementById("selected-time-start");
-            select.appendChild(option);
-
-            var option2 = document.createElement("option");
-            option2.id = "idGio-end" + gio;
-            option2.value = gio;
-            option2.innerText = "" + gio + " : 00";
-            var select_time_end = document.getElementById("selected-time-end");
-            select_time_end.appendChild(option2);
-
-            th.innerText = "" + gio;
-
-            tr.appendChild(th);
-            for (let thu = 2; thu < 8; thu++) {
-                var td = document.createElement("td");
-                td.id = "thu" + thu + "_" + gio + "h";
-                // td.innerText = 'Thứ' + thu + "_" + gio + 'Giờ';
-                td.ondblclick = function() {
-                    // alert('Thứ ' + thu + " vào lúc " + gio + ' Giờ');
-                    // Form nhập dữ liệu
-                    var formAddEventMycalendar = document.getElementById(
-                        "form-addEvent-mycalendar"
-                    );
-                    formAddEventMycalendar.style.display = "block";
-                    // chọn ngày cho thoi gian bát dau
-                    var inputNgay = document.getElementById("date-start");
-                    //Chọn ngày bắt đầu
-                    var inputNgay2 = document.getElementById("date");
-
-                    // Input thời gian abwts đầu
-                    var ChonGio = document.getElementById("selected-time-start");
-                    var date_tam = new Date(inputNgay2.value);
-                    var month_tam = document.getElementById("thang_thu" + thu);
-                    var day_tam = document.getElementById("ngayt" + thu);
-                    inputNgay.value =
-                        date_tam.getFullYear() +
-                        "-" +
-                        (month_tam.textContent.length == 1 ?
-                            "0" + month_tam.textContent :
-                            month_tam.textContent) +
-                        "-" +
-                        (day_tam.textContent.length == 1 ?
-                            "0" + day_tam.textContent :
-                            day_tam.textContent);
-                    console.log(
-                        date_tam.getFullYear() +
-                        "-" +
-                        month_tam.textContent +
-                        "-" +
-                        day_tam.textContent
-                    );
-
-                    // chọn giờ cho thoi gian bat dau
-                    var gio_select = document.getElementById("idGio-start" + gio);
-                    gio_select.selected = true;
-
-                    // chọn ngày cho thoi gian ket thuc
-                    var inputNgay3 = document.getElementById("date-the-end");
-
-                    inputNgay3.value =
-                        date_tam.getFullYear() +
-                        "-" +
-                        (month_tam.textContent.length == 1 ?
-                            "0" + month_tam.textContent :
-                            month_tam.textContent) +
-                        "-" +
-                        (day_tam.textContent.length == 1 ?
-                            "0" + day_tam.textContent :
-                            day_tam.textContent);
-                    console.log(
-                        date_tam.getFullYear() +
-                        "-" +
-                        month_tam.textContent +
-                        "-" +
-                        day_tam.textContent
-                    );
-
-                    // chọn giờ cho thoi gian kêt thuc
-
-                    var gio_select_KT = document.getElementById(
-                        "idGio-end" + (gio + 1)
-                    );
-                    gio_select_KT.selected = true;
-                };
-                td.style.height = "50px";
-                td.style.position = "relative";
-                td.style.padding = "0px";
-                tr.appendChild(td);
-            }
-
-            tbody.appendChild(tr);
-
-        }
-        setTimeout(function() {
-            var btnChonNgayTrenBangLich = document.getElementsByClassName("btn-day active");
-            btnChonNgayTrenBangLich[0].click()
-        }, 100)
-        //Đổ giwof vào select giwof bắt đầu
-        function doDuLieuVaoSelect() {}
-
-        function closeFormAddEvent() {
-            var formAddEventMycalendar = document.getElementById(
-                "form-addEvent-mycalendar"
-            );
-            formAddEventMycalendar.style.display = "none";
-        }
-
-        function ThemSuKien() {
-            // Lay gio bat dau va ket thuc
-            var gioBatDau = document.getElementById("selected-time-start");
-            var gioKetThuc = document.getElementById("selected-time-end");
-            var thoigiankeodai = gioKetThuc.value - gioBatDau.value;
-            var tieuDe = document.getElementById("input-add-envent");
-            var div = document.createElement("div");
-
-            div.onclick = function() {
-                var formEvent = document.getElementById("showEventCalendar");
-                formEvent.style.display = "block";
-            };
-
-            var inputNgay = document.getElementById("date-start");
-            var date_tam02 = new Date(inputNgay.value);
-            var thuTrongTuanTheolichBanThan = date_tam02.getDay() + 1;
-            var ChonGio = document.getElementById("selected-time-start");
-            var checkbox_laplai = document.getElementById("checkbox_laplai");
-            var input_thembanbe = document.getElementById("input_thembanbe");
-            callApiAddCongViec(tieuDe.value, editor.getData(), inputNgay.value, gioBatDau.value, gioKetThuc.value,
-                selectDanhMuc
-                .value, selectDanhMuc.options[selectDanhMuc.selectedIndex].className, checkbox_laplai.checked,
-                input_thembanbe.value);
-            tieuDe.value = "";
-            editor.setData("");
-
-        }
-
-        function closeFromChiTiet() {
-            var formEvent = document.getElementById("showEventCalendar");
-            formEvent.style.display = "none";
-        }
-
-        function callApiAddCongViec(tieuDe, noiDung, ngay, gioBatDau, gioketThuc, idDanhMuc, color, lapLai, banBe) {
-            var form = new FormData();
-            form.append('_token', '{{ csrf_token() }}');
-            form.append('tieude', tieuDe);
-            form.append('noidung', noiDung);
-            form.append('ngay', ngay);
-            form.append('giobatdau', gioBatDau);
-            form.append('gioketthuc', gioketThuc);
-            form.append('iddanhmuc', idDanhMuc);
-            form.append('iduser', idDanhMuc);
-            form.append('laplai', lapLai);
-            form.append('banbe', banBe);
-            $.ajax({
-                method: 'post',
-                url: "{{ route('schedule') }}",
-                context: document.body,
-                data: form,
-                contentType: false,
-                processData: false
-                // {
-                //     _token: "{{ csrf_token() }}",
-                //     images: imagefile
-                // }
-            }).done(function(result) {
-                console.log(result);
-                var d = new Date(result.ngay.replaceAll("-", "/"));
-                console.log(gioketThuc - gioBatDau);
-                createCardCongViec(result.id, result.tieude, d.getDay() + 1, gioBatDau, gioketThuc - gioBatDau,
-                    color);
-                thongBaoDialog();
-                sendDataChat("Bạn vừa được " + "<strong>{{ $user->name }}</strong>" + " Thêm vào 1 kế hoạch",
-                    result);
-                // var res = JSON.parse(result);
-                // thongBao("alert-success", "Đã thêm " + res.soLuongThayDoi + " nông sản này vào giỏ hàng");
-            }).fail(function(result) {
-                console.log(result);
-            })
-
-
-
-        }
-
-
-
-        // thông báo - THU HOA NE ny nghiêm quá, em sợ
-
-        function thongBaoDialog() {
-            var div = $("#thongbao");
-            setTimeout(function() {
-                var div = $("#thongbao");
-                div[0].style.display = "block";
-            }, 0);
-
-            div.animate({
-                top: '100px'
-            }, 300);
-
-            // setTimeout(function () {
-            //     var div = $("#thongbao");
-            //     div.animate({ top: '0px' }, 100);
-            // }, 1900);
-
-
-            setTimeout(function() {
-                var div = $("#thongbao");
-                div[0].style.display = "none";
-            }, 2000);
-            console.log("dhqwdhi");
-
-        }
-
-
-
-
-        // function createCardCongViec(id, tieuDe, thu, gio, thoiGianKeoDai, mauSac) {
-        //     var div = document.createElement("div");
-
-        //     div.onclick = function() {
-        //         callApigetCongViecById(id);
-        //     };
-        //     div.innerText = tieuDe;
-        //     // input mau
-        //     div.style.display = "block";
-        //     div.style.position = "absolute";
-        //     div.style.width = "100%";
-        //     console.log(thoiGianKeoDai);
-        //     div.style.height = (thoiGianKeoDai * 50) + "px";
-        //     div.style.background = mauSac;
-        //     div.style.color = "white";
-        //     console.log(tieuDe.value);
-        //     var demo = document.getElementById(
-        //         "thu" + thu + "_" + gio + "h"
-        //     );
-        //     demo.appendChild(div);
-
-        //     function deleteFormChiTiet() {
-        //         div.remove();
-        //     }
-        //     closeFormAddEvent();
-        // }
-
-        function callApiGetAllCongViec(ngayBatDau, ngayKetThuc) {
-            var form = new FormData();
-            // form.append('_token', '{{ csrf_token() }}');
-            form.append('ngayBatDau', ngayBatDau);
-            form.append('ngayKetThuc', ngayKetThuc);
-
-            $.ajax({
-                method: 'get',
-                url: "{{ route('schedule') }}?ngayBatDau=" + ngayBatDau + "&ngayKetThuc=" + ngayKetThuc,
-                context: document.body,
-                data: form,
-                contentType: false,
-                processData: false
-
-                // {
-                //     _token: "{{ csrf_token() }}",
-                //     images: imagefile
-                // }
-            }).done(function(result) {
-                console.log(result);
-                // var d = new Date(result.ngay.replaceAll("-", "/"));
-                // console.log(gioketThuc - gioBatDau);
-
-                // var res = JSON.parse(result);
-                // thongBao("alert-success", "Đã thêm " + res.soLuongThayDoi + " nông sản này vào giỏ hàng");
-            }).fail(function(result) {
-                console.log(result);
-            })
-
-
-        }
-
-        function callApiDeleteCongViec(id) {
-            var form = new FormData();
-            form.append('_token', '{{ csrf_token() }}');
-            form.append('_method', 'DELETE');
-
-            $.ajax({
-                method: 'post',
-                url: "http://localhost/ScheduleWEBTH/public/user/schedule/" + id,
-                context: document.body,
-                data: form,
-                contentType: false,
-                processData: false
-
-                // {
-                //     _token: "{{ csrf_token() }}",
-                //     images: imagefile
-                // }
-            }).done(function(result) {
-                console.log(result);
-                DeleteCardCongVIecById(id)
-            }).fail(function(result) {
-                console.log(result);
-            })
-        }
-
-        function DeleteCardCongVIecById(id) {
-            let card = document.getElementById("id_card_congviec" + id);
-            card.remove();
-            closeFromChiTiet();
-        }
-
-        function callApiGetDanhMuc() {}
-
-
-        // Thoongs kee
-        function callApiThongKeCongViec() {
-            let inputDate  = document.getElementById("date");
-            let date = new Date(inputDate.value.replaceAll("-", "/"));
-            let ngayDung = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
-            console.log("Ngay dang chon la: " + ngayDung.getDate());
-
-            let ngayCN = new Date(date.getFullYear(), date.getMonth(),(date.getDate() - (ngayDung.getDay() ) + 1) );
-            console.log("chủ nha   " + ngayCN.getFullYear() + ngayCN.getMonth() + ngayCN.getDate());
-
-            let ngayT2 = new Date(ngayCN.getFullYear(), ngayCN.getMonth(), ngayCN.getDate() +1); 
-            console.log("t2   " + ngayT2.getFullYear() + "/" + (ngayT2.getMonth() + 1) + "/" + ngayT2.getDate());
-            
-            let ngayT7 = new Date(ngayCN.getFullYear(), ngayCN.getMonth() , ngayCN.getDate() + 6);
-            console.log("t7   " + ngayT7.getFullYear() + "/" + (ngayT7.getMonth() + 1)   + "/" + ngayT7.getDate());
-
-            
-            var form = new FormData();
-
-            // form.append('_token', '{{ csrf_token() }}');
-            
-            form.append('ngayBatDau', ngayT2.getFullYear() + "/" + (ngayT2.getMonth() + 1) + "/" + ngayT2.getDate());
-            form.append('ngayKetThuc', ngayT7.getFullYear() + "/" + (ngayT7.getMonth() + 1)   + "/" + ngayT7.getDate());
-
-            $.ajax({
-                method: 'get',
-                url: "http://localhost/ScheduleWEBTH/public/user/schedule/thongke/tuan",
-                context: document.body,
-                data: form,
-                contentType: false,
-                processData: false
-
-            }).done(function(result) {
-                console.log(result);
-            }).fail(function(result) {
-                console.log(result);
-            })
-        }
-    </script>
-
-    <div id="app"></div>
-
-
-    <script>
-        new Vue({
-            el: "#app",
-            data() {
-                return {
-                    id: {{ auth()->id() }},
-                    message: "",
-                    users: [],
-                    messages: [],
-                }
-            },
-            methods: {
-                sendMessage() {
-                    // axios.post("", {
-                    //     message: this.message
-                    // })
-                    // this.message = ""
-                }
-            },
-            mounted() {
-                const echo = new Echo({
-                    broadcaster: "socket.io",
-                    host: window.location.hostname + ':6001'
-                })
-
-                echo.join('chat')
-                    .here((users) => {
-                        this.users = users
+                <script type="text/javascript">
+                    var selectDanhMuc = document.getElementById("selected-my-calendar");
+                    var inputMau_bg = document.getElementById("input-color-addEvent");
+                    selectDanhMuc.addEventListener("change", function() {
+                        inputMau_bg.value = this.options[this.selectedIndex].className;
                     })
-                    .listen('MessageSent', (event) => {
-                        console.log(event)
-                        if (event.user.id != {{ $user->id }}) {
-                            var tb = document.getElementById('alert_thongbao');
-                            var div = document.createElement('div');
-                            div.className = "alert alert-success alert-dismissible fade show";
-                            div.innerHTML =
-                                '<strong>Thông báo!</strong> ' + event.message +
-                                '. <button type="button" class="btn-close" data-bs-dismiss="alert"></button>';
-                            tb.append(div);
-                            // createCardCongViec(event.congViec.id,event.congViec.tieude, devent.congViec.ngay.getDay() + 1, gioBatDau, gioketThuc -
-                            //     gioBatDau,
-                            //     color);
+
+                    var editor;
+
+                    ClassicEditor
+                        .create(document.querySelector('#editor'))
+                        .then(newEditor => {
+                            editor = newEditor;
+                        })
+                        .catch(error => {
+                            console.error(error);
+                        });
+
+
+
+
+                    var idSTT = 5;
+
+
+
+                    function addTotoList() {
+                        var ulTodolist = document.getElementById("myUL-todolist");
+                        var textTodolist = document.getElementById("myInput-todolist").value;
+                        var div = document.createElement("DIV");
+
+                        div.innerHTML =
+                            '<li id="li-0' +
+                            idSTT +
+                            '" class="muLI-todolist"> <span class="text-li-todolist">' +
+                            textTodolist +
+                            '</span> <div class="d-flex"> <button onclick="deleteTodolist(&apos;li-0' +
+                            idSTT++ +
+                            '&apos;)" class="btn-delete-todolist"><span class="iconify" data-icon="bi:x-square-fill" style="font-size: 25px; color: #ee183b;"></span></button> <input class="input-color-todolist" type="color"> </div> </li>';
+                        ulTodolist.appendChild(div);
+                    }
+
+                    function changeColor(idLi) {
+                        var idColor = color_0 + "(idSTT++)";
+                        var valueColor = document.getElementById(idColor).value;
+                        var li = document.getElementById(idLi);
+                        li.style.background = valueColor;
+                        console.log(valueColor);
+                    }
+
+                    function deleteTodolist(idLi) {
+                        var li = document.getElementById(idLi);
+                        li.remove();
+                    }
+
+                    // function dành cho bên trái menu
+                    function showMyCalendar() {
+                        var ulTodolist = document.getElementById("ul-leftTodoList");
+                        var textTodolist = document.getElementById("li-01");
+                        var text = textTodolist.innerText;
+                        var div = document.createElement("DIV");
+                        div.innerHTML =
+                            '<li class="li-leftTodolist" style="background-color: #ddb547;"> ' +
+                            text +
+                            " </li>";
+                        ulTodolist.appendChild(div);
+                        console.log("djie");
+                    }
+
+                    function printTodoList() {
+                        var arrayTodoList;
+                        arrayTodoList = document.getElementsByClassName("muLI-todolist");
+                        for (var i of arrayTodoList) {
+                            console.log(i.textContent);
+                        }
+                    }
+
+                    var tbody = document.getElementById("tbody");
+                    for (let gio = 1; gio < 25; gio++) {
+                        var tr = document.createElement("tr");
+                        var th = document.createElement("th");
+                        var option = document.createElement("option");
+                        option.id = "idGio-start" + gio;
+                        option.value = gio;
+                        option.innerText = "" + gio + " : 00";
+                        var select = document.getElementById("selected-time-start");
+                        select.appendChild(option);
+
+                        var option2 = document.createElement("option");
+                        option2.id = "idGio-end" + gio;
+                        option2.value = gio;
+                        option2.innerText = "" + gio + " : 00";
+                        var select_time_end = document.getElementById("selected-time-end");
+                        select_time_end.appendChild(option2);
+
+                        th.innerText = "" + gio;
+
+                        tr.appendChild(th);
+                        for (let thu = 2; thu < 8; thu++) {
+                            var td = document.createElement("td");
+                            td.id = "thu" + thu + "_" + gio + "h";
+                            // td.innerText = 'Thứ' + thu + "_" + gio + 'Giờ';
+                            td.ondblclick = function() {
+                                // alert('Thứ ' + thu + " vào lúc " + gio + ' Giờ');
+                                // Form nhập dữ liệu
+                                var formAddEventMycalendar = document.getElementById(
+                                    "form-addEvent-mycalendar"
+                                );
+                                formAddEventMycalendar.style.display = "block";
+                                // chọn ngày cho thoi gian bát dau
+                                var inputNgay = document.getElementById("date-start");
+                                //Chọn ngày bắt đầu
+                                var inputNgay2 = document.getElementById("date");
+
+                                // Input thời gian abwts đầu
+                                var ChonGio = document.getElementById("selected-time-start");
+                                var date_tam = new Date(inputNgay2.value);
+                                var month_tam = document.getElementById("thang_thu" + thu);
+                                var day_tam = document.getElementById("ngayt" + thu);
+                                inputNgay.value =
+                                    date_tam.getFullYear() +
+                                    "-" +
+                                    (month_tam.textContent.length == 1 ?
+                                        "0" + month_tam.textContent :
+                                        month_tam.textContent) +
+                                    "-" +
+                                    (day_tam.textContent.length == 1 ?
+                                        "0" + day_tam.textContent :
+                                        day_tam.textContent);
+                                console.log(
+                                    date_tam.getFullYear() +
+                                    "-" +
+                                    month_tam.textContent +
+                                    "-" +
+                                    day_tam.textContent
+                                );
+
+                                // chọn giờ cho thoi gian bat dau
+                                var gio_select = document.getElementById("idGio-start" + gio);
+                                gio_select.selected = true;
+
+                                // chọn ngày cho thoi gian ket thuc
+                                var inputNgay3 = document.getElementById("date-the-end");
+
+                                inputNgay3.value =
+                                    date_tam.getFullYear() +
+                                    "-" +
+                                    (month_tam.textContent.length == 1 ?
+                                        "0" + month_tam.textContent :
+                                        month_tam.textContent) +
+                                    "-" +
+                                    (day_tam.textContent.length == 1 ?
+                                        "0" + day_tam.textContent :
+                                        day_tam.textContent);
+                                console.log(
+                                    date_tam.getFullYear() +
+                                    "-" +
+                                    month_tam.textContent +
+                                    "-" +
+                                    day_tam.textContent
+                                );
+
+                                // chọn giờ cho thoi gian kêt thuc
+
+                                var gio_select_KT = document.getElementById(
+                                    "idGio-end" + (gio + 1)
+                                );
+                                gio_select_KT.selected = true;
+                            };
+                            td.style.height = "50px";
+                            td.style.position = "relative";
+                            td.style.padding = "0px";
+                            tr.appendChild(td);
                         }
 
+                        tbody.appendChild(tr);
+
+                    }
+                    setTimeout(function() {
+                        var btnChonNgayTrenBangLich = document.getElementsByClassName("btn-day active");
+                        btnChonNgayTrenBangLich[0].click()
+                    }, 100)
+                    //Đổ giwof vào select giwof bắt đầu
+                    function doDuLieuVaoSelect() {}
+
+                    function closeFormAddEvent() {
+                        var formAddEventMycalendar = document.getElementById(
+                            "form-addEvent-mycalendar"
+                        );
+                        formAddEventMycalendar.style.display = "none";
+                    }
+
+                    function ThemSuKien() {
+                        // Lay gio bat dau va ket thuc
+                        var gioBatDau = document.getElementById("selected-time-start");
+                        var gioKetThuc = document.getElementById("selected-time-end");
+                        var thoigiankeodai = gioKetThuc.value - gioBatDau.value;
+                        var tieuDe = document.getElementById("input-add-envent");
+                        var div = document.createElement("div");
+
+                        div.onclick = function() {
+                            var formEvent = document.getElementById("showEventCalendar");
+                            formEvent.style.display = "block";
+                        };
+
+                        var inputNgay = document.getElementById("date-start");
+                        var date_tam02 = new Date(inputNgay.value);
+                        var thuTrongTuanTheolichBanThan = date_tam02.getDay() + 1;
+                        var ChonGio = document.getElementById("selected-time-start");
+                        var checkbox_laplai = document.getElementById("checkbox_laplai");
+                        var input_thembanbe = document.getElementById("input_thembanbe");
+                        callApiAddCongViec(tieuDe.value, editor.getData(), inputNgay.value, gioBatDau.value, gioKetThuc.value,
+                            selectDanhMuc
+                            .value, selectDanhMuc.options[selectDanhMuc.selectedIndex].className, checkbox_laplai.checked,
+                            input_thembanbe.value);
+                        tieuDe.value = "";
+                        editor.setData("");
+
+                    }
+
+                    function closeFromChiTiet() {
+                        var formEvent = document.getElementById("showEventCalendar");
+                        formEvent.style.display = "none";
+                    }
+
+                    function callApiAddCongViec(tieuDe, noiDung, ngay, gioBatDau, gioketThuc, idDanhMuc, color, lapLai, banBe) {
+                        var form = new FormData();
+                        form.append('_token', '{{ csrf_token() }}');
+                        form.append('tieude', tieuDe);
+                        form.append('noidung', noiDung);
+                        form.append('ngay', ngay);
+                        form.append('giobatdau', gioBatDau);
+                        form.append('gioketthuc', gioketThuc);
+                        form.append('iddanhmuc', idDanhMuc);
+                        form.append('iduser', idDanhMuc);
+                        form.append('laplai', lapLai);
+                        form.append('banbe', banBe);
+                        $.ajax({
+                            method: 'post',
+                            url: "{{ route('schedule') }}",
+                            context: document.body,
+                            data: form,
+                            contentType: false,
+                            processData: false
+                            // {
+                            //     _token: "{{ csrf_token() }}",
+                            //     images: imagefile
+                            // }
+                        }).done(function(result) {
+                            console.log(result);
+                            var d = new Date(result.ngay.replaceAll("-", "/"));
+                            console.log(gioketThuc - gioBatDau);
+                            createCardCongViec(result.id, result.tieude, d.getDay() + 1, gioBatDau, gioketThuc - gioBatDau,
+                                color);
+                            thongBaoDialog();
+                            sendDataChat("Bạn vừa được " + "<strong>{{ $user->name }}</strong>" + " Thêm vào 1 kế hoạch",
+                                result);
+                            // var res = JSON.parse(result);
+                            // thongBao("alert-success", "Đã thêm " + res.soLuongThayDoi + " nông sản này vào giỏ hàng");
+                        }).fail(function(result) {
+                            console.log(result);
+                        })
 
 
-                    });
-            },
-        })
 
-        function sendDataChat(contentMessage, contentWork) {
-            axios.post("http://localhost/ScheduleWEBTH/public/chat", {
-                message: contentMessage,
-                congviec: contentWork
-            })
-            // this.message = ""
-        }
-    </script>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-
-    <script src="https://kit.fontawesome.com/812e771e48.js" crossorigin="anonymous"></script>
-    <script type="text/javascript" src="js/calendar.js"></script>
-    <script type="text/javascript" src="js/todolist-mycalendar.js"></script>
-    <script type="text/javascript" src="js/datetime.js"></script>
-
-    <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
-    <script type="text/javascript" src="bootstrap-4/js/bootstrap.js"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
-    </script>
-    <script src="js/scripts.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+                    }
 
 
 
-    <script src="js/datatables-simple-demo.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
-        crossorigin="anonymous"></script>
+                    // thông báo - THU HOA NE ny nghiêm quá, em sợ
+
+                    function thongBaoDialog() {
+                        var div = $("#thongbao");
+                        setTimeout(function() {
+                            var div = $("#thongbao");
+                            div[0].style.display = "block";
+                        }, 0);
+
+                        div.animate({
+                            top: '100px'
+                        }, 300);
+
+                        // setTimeout(function () {
+                        //     var div = $("#thongbao");
+                        //     div.animate({ top: '0px' }, 100);
+                        // }, 1900);
+
+
+                        setTimeout(function() {
+                            var div = $("#thongbao");
+                            div[0].style.display = "none";
+                        }, 2000);
+                        console.log("dhqwdhi");
+
+                    }
+
+
+
+
+                    // function createCardCongViec(id, tieuDe, thu, gio, thoiGianKeoDai, mauSac) {
+                    //     var div = document.createElement("div");
+
+                    //     div.onclick = function() {
+                    //         callApigetCongViecById(id);
+                    //     };
+                    //     div.innerText = tieuDe;
+                    //     // input mau
+                    //     div.style.display = "block";
+                    //     div.style.position = "absolute";
+                    //     div.style.width = "100%";
+                    //     console.log(thoiGianKeoDai);
+                    //     div.style.height = (thoiGianKeoDai * 50) + "px";
+                    //     div.style.background = mauSac;
+                    //     div.style.color = "white";
+                    //     console.log(tieuDe.value);
+                    //     var demo = document.getElementById(
+                    //         "thu" + thu + "_" + gio + "h"
+                    //     );
+                    //     demo.appendChild(div);
+
+                    //     function deleteFormChiTiet() {
+                    //         div.remove();
+                    //     }
+                    //     closeFormAddEvent();
+                    // }
+
+                    function callApiGetAllCongViec(ngayBatDau, ngayKetThuc) {
+                        var form = new FormData();
+                        // form.append('_token', '{{ csrf_token() }}');
+                        form.append('ngayBatDau', ngayBatDau);
+                        form.append('ngayKetThuc', ngayKetThuc);
+
+                        $.ajax({
+                            method: 'get',
+                            url: "{{ route('schedule') }}?ngayBatDau=" + ngayBatDau + "&ngayKetThuc=" + ngayKetThuc,
+                            context: document.body,
+                            data: form,
+                            contentType: false,
+                            processData: false
+
+                            // {
+                            //     _token: "{{ csrf_token() }}",
+                            //     images: imagefile
+                            // }
+                        }).done(function(result) {
+                            console.log(result);
+                            // var d = new Date(result.ngay.replaceAll("-", "/"));
+                            // console.log(gioketThuc - gioBatDau);
+
+                            // var res = JSON.parse(result);
+                            // thongBao("alert-success", "Đã thêm " + res.soLuongThayDoi + " nông sản này vào giỏ hàng");
+                        }).fail(function(result) {
+                            console.log(result);
+                        })
+
+
+                    }
+
+                    function callApiDeleteCongViec(id) {
+                        var form = new FormData();
+                        form.append('_token', '{{ csrf_token() }}');
+                        form.append('_method', 'DELETE');
+
+                        $.ajax({
+                            method: 'post',
+                            url: "http://localhost/ScheduleWEBTH/public/user/schedule/" + id,
+                            context: document.body,
+                            data: form,
+                            contentType: false,
+                            processData: false
+
+                            // {
+                            //     _token: "{{ csrf_token() }}",
+                            //     images: imagefile
+                            // }
+                        }).done(function(result) {
+                            console.log(result);
+                            DeleteCardCongVIecById(id)
+                        }).fail(function(result) {
+                            console.log(result);
+                        })
+                    }
+
+                    function DeleteCardCongVIecById(id) {
+                        let card = document.getElementById("id_card_congviec" + id);
+                        card.remove();
+                        closeFromChiTiet();
+                    }
+
+                    function callApiGetDanhMuc() {}
+
+
+                    // Thoongs kee
+                    function callApiThongKeCongViec() {
+                        let inputDate = document.getElementById("date");
+                        let date = new Date(inputDate.value.replaceAll("-", "/"));
+                        let ngayDung = new Date(date.getFullYear(), date.getMonth(), date.getDate() + 1);
+                        console.log("Ngay dang chon la: " + ngayDung.getDate());
+
+                        let ngayCN = new Date(date.getFullYear(), date.getMonth(), (date.getDate() - (ngayDung.getDay()) + 1));
+                        console.log("chủ nha   " + ngayCN.getFullYear() + ngayCN.getMonth() + ngayCN.getDate());
+
+                        let ngayT2 = new Date(ngayCN.getFullYear(), ngayCN.getMonth(), ngayCN.getDate() + 1);
+                        console.log("t2   " + ngayT2.getFullYear() + "/" + (ngayT2.getMonth() + 1) + "/" + ngayT2.getDate());
+
+                        let ngayT7 = new Date(ngayCN.getFullYear(), ngayCN.getMonth(), ngayCN.getDate() + 6);
+                        console.log("t7   " + ngayT7.getFullYear() + "/" + (ngayT7.getMonth() + 1) + "/" + ngayT7.getDate());
+
+
+                        var form = new FormData();
+
+                        // form.append('_token', '{{ csrf_token() }}');
+
+                        form.append('ngayBatDau', ngayT2.getFullYear() + "/" + (ngayT2.getMonth() + 1) + "/" + ngayT2.getDate());
+                        form.append('ngayKetThuc', ngayT7.getFullYear() + "/" + (ngayT7.getMonth() + 1) + "/" + ngayT7.getDate());
+
+                        $.ajax({
+                            method: 'get',
+                            url: "http://localhost/ScheduleWEBTH/public/user/schedule/thongke/tuan?ngayBatDau=" + (ngayT2
+                                    .getFullYear() + "/" + (ngayT2.getMonth() + 1) + "/" + ngayT2.getDate()) + "&ngayKetThuc=" +
+                                (ngayT7.getFullYear() + "/" + (ngayT7.getMonth() + 1) + "/" + ngayT7.getDate()),
+                            context: document.body,
+                            data: form,
+                            contentType: false,
+                            processData: false
+
+                        }).done(function(result) {
+                            console.log(result);
+                            for (let item of result) {
+                                let soLuongThu = document.getElementById("tk_thu" + (item.thu + 1));
+                                soLuongThu.innerHTML = item.soluong;
+
+                            }
+                        }).fail(function(result) {
+                            console.log(result);
+                        })
+                    }
+
+                    function resetDataThongke() {
+                        for (let i = 2; i <= 7; i++) {
+                            let soLuongThu = document.getElementById("tk_thu" + i);
+                            soLuongThu.innerHTML = "0";
+                        }
+                    }
+                </script>
+
+                <div id="app"></div>
+
+
+                <script>
+                    new Vue({
+                        el: "#app",
+                        data() {
+                            return {
+                                id: {{ auth()->id() }},
+                                message: "",
+                                users: [],
+                                messages: [],
+                            }
+                        },
+                        methods: {
+                            sendMessage() {
+                                // axios.post("", {
+                                //     message: this.message
+                                // })
+                                // this.message = ""
+                            }
+                        },
+                        mounted() {
+                            const echo = new Echo({
+                                broadcaster: "socket.io",
+                                host: window.location.hostname + ':6001'
+                            })
+
+                            echo.join('chat')
+                                .here((users) => {
+                                    this.users = users
+                                })
+                                .listen('MessageSent', (event) => {
+                                    console.log(event)
+                                    if (event.user.id != {{ $user->id }}) {
+                                        var tb = document.getElementById('alert_thongbao');
+                                        var div = document.createElement('div');
+                                        div.className = "alert alert-success alert-dismissible fade show";
+                                        div.innerHTML =
+                                            '<strong>Thông báo!</strong> ' + event.message +
+                                            '. <button type="button" class="btn-close" data-bs-dismiss="alert"></button>';
+                                        tb.append(div);
+                                        // createCardCongViec(event.congViec.id,event.congViec.tieude, devent.congViec.ngay.getDay() + 1, gioBatDau, gioketThuc -
+                                        //     gioBatDau,
+                                        //     color);
+                                    }
+
+
+
+                                });
+                        },
+                    })
+
+                    function sendDataChat(contentMessage, contentWork) {
+                        axios.post("http://localhost/ScheduleWEBTH/public/chat", {
+                            message: contentMessage,
+                            congviec: contentWork
+                        })
+                        // this.message = ""
+                    }
+                </script>
+
+                <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+                <script src="https://kit.fontawesome.com/812e771e48.js" crossorigin="anonymous"></script>
+                <script type="text/javascript" src="js/calendar.js"></script>
+                <script type="text/javascript" src="js/todolist-mycalendar.js"></script>
+                <script type="text/javascript" src="js/datetime.js"></script>
+
+                <script src="https://code.iconify.design/2/2.0.4/iconify.min.js"></script>
+                <script type="text/javascript" src="bootstrap-4/js/bootstrap.js"></script>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous">
+                </script>
+                <script src="js/scripts.js"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" crossorigin="anonymous"></script>
+
+
+
+                <script src="js/datatables-simple-demo.js"></script>
+                <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+                                crossorigin="anonymous"></script>
 
 </body>
 
