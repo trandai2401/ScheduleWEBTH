@@ -39,6 +39,14 @@
     <!-- Ck editor -->
     <script src="https://cdn.ckeditor.com/ckeditor5/31.1.0/classic/ckeditor.js"></script>
 
+
+
+
+    <script src="//cdnjs.cloudflare.com/ajax/libs/axios/0.21.1/axios.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/socket.io/2.4.0/socket.io.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/laravel-echo/1.11.0/echo.common.min.js"></script>
+
     <title>index</title>
     <title>Dashboard - SB Admin</title>
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
@@ -586,10 +594,23 @@
 
             </div>
 
+            {{-- ALERT THONG BAO --}}
+            <div style="position: fixed;left: 900px;" id="alert_thongbao">
+                {{-- <div class="alert alert-success alert-dismissible fade show">
+                    <strong>Success!</strong> Your message has been sent successfully.
+                    <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                </div> --}}
+            </div>
+
+
+
+
             <!-- Dialog - Thống kê coog việc  -->
             <!-- Modal -->
-            <div class="modal fade" id="exampleModalCenter_02" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+            <div class="modal fade" id="exampleModalCenter_02" tabindex="-1" role="dialog"
+                aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                 <div class="modal-dialog modal-dialog-centered" role="document">
+
                 <div class="modal-content">
                     <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalLongTitle">Thống kê công việc</h5>
@@ -610,7 +631,23 @@
                             <label for="">Công việc hiện có: </label> <label id="tk_thu2" for="">0</label>
                             </div>
                         </div>
+
                         </div>
+                        <div class="modal-body" id="body_thongbao">
+                            <div class="row">
+                                <div class="col-6 my-3">
+                                    <div class="card-content-col">
+                                        <div>
+                                            <img src="https://cdn-icons-png.flaticon.com/128/3269/3269691.png" alt="">
+                                        </div>
+                                        <div class="title px-3">
+                                            <label for=""><b>Thứ hai</b></label>
+                                            <br>
+                                            <label for="">Công việc hiện có: </label> <label for="">9</label>
+                                        </div>
+                                    </div>
+                                </div>
+
 
                         <div class="col-6 my-3">
                         <div class="card-content-col">
@@ -673,21 +710,19 @@
                             <label id="" for=""><b>Thứ bảy</b></label>
                             <br>
                             <label for="">Công việc hiện có: </label> <label id="tk_thu7" for="">0</label>
+
                             </div>
                         </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Save changes</button>
                         </div>
-
-                        
                     </div>
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
                 </div>
             </div>
+
         </div>
+
     </div>
 
     <script type="text/javascript">
@@ -944,6 +979,8 @@
                 createCardCongViec(result.id, result.tieude, d.getDay() + 1, gioBatDau, gioketThuc - gioBatDau,
                     color);
                 thongBaoDialog();
+                sendDataChat("Bạn vừa được " + "<strong>{{ $user->name }}</strong>" + " Thêm vào 1 kế hoạch",
+                    result);
                 // var res = JSON.parse(result);
                 // thongBao("alert-success", "Đã thêm " + res.soLuongThayDoi + " nông sản này vào giỏ hàng");
             }).fail(function(result) {
@@ -1119,6 +1156,67 @@
         }
     </script>
 
+    <div id="app"></div>
+
+
+    <script>
+        new Vue({
+            el: "#app",
+            data() {
+                return {
+                    id: {{ auth()->id() }},
+                    message: "",
+                    users: [],
+                    messages: [],
+                }
+            },
+            methods: {
+                sendMessage() {
+                    // axios.post("", {
+                    //     message: this.message
+                    // })
+                    // this.message = ""
+                }
+            },
+            mounted() {
+                const echo = new Echo({
+                    broadcaster: "socket.io",
+                    host: window.location.hostname + ':6001'
+                })
+
+                echo.join('chat')
+                    .here((users) => {
+                        this.users = users
+                    })
+                    .listen('MessageSent', (event) => {
+                        console.log(event)
+                        if (event.user.id != {{ $user->id }}) {
+                            var tb = document.getElementById('alert_thongbao');
+                            var div = document.createElement('div');
+                            div.className = "alert alert-success alert-dismissible fade show";
+                            div.innerHTML =
+                                '<strong>Thông báo!</strong> ' + event.message +
+                                '. <button type="button" class="btn-close" data-bs-dismiss="alert"></button>';
+                            tb.append(div);
+                            // createCardCongViec(event.congViec.id,event.congViec.tieude, devent.congViec.ngay.getDay() + 1, gioBatDau, gioketThuc -
+                            //     gioBatDau,
+                            //     color);
+                        }
+
+
+
+                    });
+            },
+        })
+
+        function sendDataChat(contentMessage, contentWork) {
+            axios.post("http://localhost/ScheduleWEBTH/public/chat", {
+                message: contentMessage,
+                congviec: contentWork
+            })
+            // this.message = ""
+        }
+    </script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 

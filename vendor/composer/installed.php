@@ -1,11 +1,11 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'v8.6.10',
-        'version' => '8.6.10.0',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => NULL,
+        'reference' => 'fe5effb72d1762045614a4a2227d90a81a11ef3f',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -395,12 +395,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'v8.6.10',
-            'version' => '8.6.10.0',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => NULL,
+            'reference' => 'fe5effb72d1762045614a4a2227d90a81a11ef3f',
             'dev_requirement' => false,
         ),
         'laravel/sail' => array(
@@ -682,6 +682,15 @@
             'reference' => 'c814a05837f2edb0d1471d6e3f4ab3501ca3899a',
             'dev_requirement' => true,
         ),
+        'predis/predis' => array(
+            'pretty_version' => 'v1.1.9',
+            'version' => '1.1.9.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../predis/predis',
+            'aliases' => array(),
+            'reference' => 'c50c3393bb9f47fa012d0cdfb727a266b0818259',
+            'dev_requirement' => false,
+        ),
         'psr/container' => array(
             'pretty_version' => '1.1.2',
             'version' => '1.1.2.0',
@@ -769,8 +778,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0|2.0',
-                1 => '1.0.0 || 2.0.0 || 3.0.0',
+                0 => '1.0.0 || 2.0.0 || 3.0.0',
+                1 => '1.0|2.0',
             ),
         ),
         'psr/simple-cache' => array(

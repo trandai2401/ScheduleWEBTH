@@ -1,5 +1,6 @@
 <?php
 
+use App\Events\MessageSent;
 use App\Http\Controllers\CongViecController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\SignUpController;
@@ -37,6 +38,11 @@ Route::post('signup', [SignUpController::class, 'postSignUp'])->name('signup');
 // Route::get('home', function () {
 //     return view("web.ViewHome");
 // })->name("home");
+Route::post('chat', function (Request $request) {
+    broadcast(new MessageSent(auth()->user(), $request->input('message'), $request->congviec));
+
+    return $request->input('message');
+});
 
 Route::prefix('user')->group(function () {
     Route::prefix('/schedule')->group(function () {
