@@ -187,7 +187,7 @@ function resetDate() {
 }
 
 // Thay đổi ngày theo số lượng nút được nhấp
-var dateStart ;
+var dateStart;
 var dayDisplay;
 function changeDate(button) {
     removeAllCardCongViec()
@@ -290,9 +290,12 @@ function createCardCongViec(id, tieuDe, thu, gio, thoiGianKeoDai, mauSac) {
     div.style.position = "absolute";
     div.style.width = "100%";
     console.log(thoiGianKeoDai);
-    div.style.height = (thoiGianKeoDai * 50) + "px";
+    div.style.height = (thoiGianKeoDai * 50 - 1) + "px";
     div.style.background = mauSac;
     div.style.color = "white";
+    div.style.borderRadius = "2px"
+    div.style.boxShadow = "rgb(255 255 255) 0px 2px 4px"
+    // div.style.boxShadow = "rgba(0, 0, 0, 0.16) 0px 1px 4px"
     console.log(tieuDe.value);
     var demo = document.getElementById(
         "thu" + thu + "_" + gio + "h"
