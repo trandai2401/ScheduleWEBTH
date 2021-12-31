@@ -187,51 +187,53 @@ function resetDate() {
 }
 
 // Thay đổi ngày theo số lượng nút được nhấp
+var dateStart ;
+var dayDisplay;
 function changeDate(button) {
     removeAllCardCongViec()
     let newDay = parseInt(button.textContent);
     date = new Date(date.getFullYear(), date.getMonth(), newDay);
-    console.log(date);
+    // console.log(date);
     generateCalendar();
-    var dateDisplay = new Date(date.getFullYear(), date.getMonth(), newDay);
+    dateDisplay = new Date(date.getFullYear(), date.getMonth(), newDay);
 
     dateDisplay = new Date(dateDisplay.getFullYear(), dateDisplay.getMonth(), dateDisplay.getDate() - (dateDisplay.getDay() - 1));
-    console.log("Thứ 2 là ngày: " + dateDisplay.getDate());
+    // console.log("Thứ 2 là ngày: " + dateDisplay.getDate());
     var ngaythu2 = document.getElementById("ngayt2");
     var thangThu2 = document.getElementById("thang_thu2");
     thangThu2.innerText = dateDisplay.getMonth() + 1;
     ngaythu2.innerText = dateDisplay.getDate();
 
     dateDisplay = new Date(dateDisplay.getFullYear(), dateDisplay.getMonth(), dateDisplay.getDate() + 1);
-    console.log("Thứ 3 là ngày: " + dateDisplay.getDate());
+    // console.log("Thứ 3 là ngày: " + dateDisplay.getDate());
     var ngaythu3 = document.getElementById("ngayt3");
     var thangThu3 = document.getElementById("thang_thu3");
     thangThu3.innerText = dateDisplay.getMonth() + 1;
     ngaythu3.innerText = dateDisplay.getDate();
 
     dateDisplay = new Date(dateDisplay.getFullYear(), dateDisplay.getMonth(), dateDisplay.getDate() + 1);
-    console.log("Thứ 4 là ngày: " + dateDisplay.getDate());
+    // console.log("Thứ 4 là ngày: " + dateDisplay.getDate());
     var ngaythu4 = document.getElementById("ngayt4");
     var thangThu4 = document.getElementById("thang_thu4");
     thangThu4.innerText = dateDisplay.getMonth() + 1;
     ngaythu4.innerText = dateDisplay.getDate();
 
     dateDisplay = new Date(dateDisplay.getFullYear(), dateDisplay.getMonth(), dateDisplay.getDate() + 1);
-    console.log("Thứ 5 là ngày: " + dateDisplay.getDate());
+    // console.log("Thứ 5 là ngày: " + dateDisplay.getDate());
     var ngaythu4 = document.getElementById("ngayt5");
     var thangThu5 = document.getElementById("thang_thu5");
     thangThu5.innerText = dateDisplay.getMonth() + 1;
     ngaythu4.innerText = dateDisplay.getDate();
 
     dateDisplay = new Date(dateDisplay.getFullYear(), dateDisplay.getMonth(), dateDisplay.getDate() + 1);
-    console.log("Thứ 6 là ngày: " + dateDisplay.getDate());
+    // console.log("Thứ 6 là ngày: " + dateDisplay.getDate());
     var ngaythu6 = document.getElementById("ngayt6");
     var thangThu6 = document.getElementById("thang_thu6");
     thangThu6.innerText = dateDisplay.getMonth() + 1;
     ngaythu6.innerText = dateDisplay.getDate();
 
     dateDisplay = new Date(dateDisplay.getFullYear(), dateDisplay.getMonth(), dateDisplay.getDate() + 1);
-    console.log("Thứ 7 là ngày: " + dateDisplay.getFullYear());
+    // console.log("Thứ 7 là ngày: " + dateDisplay.getFullYear());
     var ngaythu7 = document.getElementById("ngayt7");
     var thangThu7 = document.getElementById("thang_thu7");
     thangThu7.innerText = dateDisplay.getMonth() + 1;
@@ -239,7 +241,7 @@ function changeDate(button) {
 
 
 
-    var dateStart = new Date(dateDisplay.getFullYear(), dateDisplay.getMonth(), dateDisplay.getDate() - 5);
+    dateStart = new Date(dateDisplay.getFullYear(), dateDisplay.getMonth(), dateDisplay.getDate() - 5);
 
     console.log("" + dateStart.getFullYear() + "/" + (dateStart.getMonth() + 1) + "/" + (dateStart.getDate()))
     console.log(dateDisplay.getFullYear() + "/" + (dateDisplay.getMonth() + 1) + "/" + (dateDisplay.getDate()))
@@ -409,3 +411,4 @@ document.onload = generateCalendar(date);
 
 // var btnChonNgayTrenBangLich = document.getElementsByClassName("btn-day active");
 // btnChonNgayTrenBangLich[0].click()
+
